@@ -55,3 +55,6 @@ header h1{
     background-color: greenyellow;
     color: brown;
 }
+.container image{
+    size: 100%;
+}
