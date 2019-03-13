@@ -1,5 +1,5 @@
 body{
-    background-color:#cc2020;
+    background-color: bisque;
     padding: 0;
     margin: 0;
 }
@@ -29,10 +29,4 @@ header{
 header img{
     width: 100%;
     height: 160px;
-}
-form{
-    padding-top:10%;
-    background-color: white;
-    width: 60%;
-    padding-bottom: 20px;
 }
