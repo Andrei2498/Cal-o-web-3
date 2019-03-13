@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
     <head>
         <title>Register</title>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
         <link rel="stylesheet" type="text/css" href="../css/register.css">
     </head>
     <body>
-        <section class="form">
-            <a class="container">
-            <form>
-                <a class="formtxt">User:</a><input type="text" name="user" value=""><br>
-                Password:<input type="text" name="user" value=""><br>
-                Re-Password:<input type="text" name="user" value=""><br>
-                First Name:<input type="text" name="fName" value="type first name"><br>
-                Last Name:<input type="text" name="lName" value="type last name"><br>
-                <input type="submit" value="Register">
-            </form>
-        </a>
-        </section>
-        <footer>
-
-        </footer>
+        <div class="register">
+            <section class="form">
+                <h1>Register Form</h1>
+                <form>
+                    <div id="inputContent">
+                    <input type="text" name="fName" value="First name"> 
+                    <br><br>
+                    <input type="text" name="lName" value="Last name">
+                    <br>
+                    <br>   
+                    <input type="text" name="email" value="Your Email">
+                    <br><br>   
+                    <input type="text" name="email" value="Your UserName">
+                    <br><br>
+                    <input type="text" name="password" value="Enter password"><br><br>
+                    <input type="text" name="second-password" value="re-enter password"><br><br>
+                    </div>
+                    <div id="registerBtn">
+                        <button type="button">Register</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </body>
 </html>
