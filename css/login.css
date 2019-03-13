@@ -61,8 +61,25 @@ footer{
   background-color:#64666d;
   padding-bottom: 1%;
 }
-
+/* ----- AICI AVEM FOOTERUL ------ */
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+footer ul li{
+    padding-left: 2%;
+    float: left;
+}
+footer img{
+    padding-top:6%;
+}
 #image{
-padding-top: 1%;
-padding-right: 70%;
+    padding-top: 5%;
+    margin-left: 10%;
+}
+li p{
+    padding-top: 3%;
+    padding-left: 10px;
 }
