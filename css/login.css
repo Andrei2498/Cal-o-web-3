@@ -8,19 +8,32 @@ input[type=text]{
 
 body{
  text-align: center;
- background-color: orange;
+ background-color:#cc2020;
  }
 
  #login{
      margin:10%;
-     margin-left: 25%;
+     margin-left: 35%;
      background-color:#ffffff;
      min-height: 30%;
-     padding-top:10%;
-     padding-bottom: 10%;
-     width: 50%;
+     padding-top:5%;
+     padding-bottom: 5%;
+     width: 30%;
      vertical-align: middle; 
 
+ }
+
+ #username input{
+     width: 300px;
+     background-color:#f8f8f8;
+     padding-top:2% ;
+     padding-bottom: 2%;
+     padding-left: 1%;
+     border: 0;
+ }
+
+ #checkbox{
+padding-right: 25%;
  }
 
  #loginbutton button
@@ -33,4 +46,9 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    width: 300px;
+ }
+
+ #loginbutton button:hover{
+     background-color: #cc2020;
  }
