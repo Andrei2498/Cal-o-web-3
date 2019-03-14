@@ -56,12 +56,12 @@ padding-right: 40%;
      background-color: #cc2020;
 }
 
+/* ----- AICI AVEM FOOTERUL ------ */
 footer{
   height:10%;
   background-color:#64666d;
   padding-bottom: 1%;
 }
-/* ----- AICI AVEM FOOTERUL ------ */
 footer ul{
     list-style-type: none;
     margin: 0;
