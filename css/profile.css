@@ -1,14 +1,116 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;   
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+header{
+    background: gray;
+    color: #ffffff;
+    height: 180px;
+}
+header #branding{
+    float: left;
+    margin-bottom: 20px;
+}
+header h1{
+    font-family: "Apple Chancery", cursive;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+}
+.mybar{
+    overflow: hidden;
+    background-color: brown;
+    padding-right: 10%;
+    min-height: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.mybar a{
+    float: right;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: aliceblue;
+}
+.mybar a:hover{
+    background-color: aqua;
+    color: black;
+}
+.mybar a.active{
+    background-color: greenyellow;
+    color: brown;
+}
 img{
-    padding-left: 3%;
-    padding-top: 3%;
+    width: 100%;
+    height: 180px;
+}
+.profilImage {
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    width: 250px;
+    padding-left: 50px; 
+    padding-top: 50px;
     float: left;
 }
-
-p{
-    padding-top: 3%;
+.profilImage img{
+    align: left;
+    height: 250px;
+    width: 250px;
     margin: 0;
+    padding: 0;
+}
+aside{
     float: left;
-    padding-left: 3%;
-    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 77%;
+}
+aside h1{
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+
+}
+aside h3{
+    margin: 10px;
+    padding: 0;
+}
+.reteteUrmate{
+    position: relative;
+    float: left;
+    margin: 50px;
+    left: 20%;
+}
+.reteteUrmate h1{
+    text-align: center;
+}
+.boxLine {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 50px;
+    margin-top: 25px;
+    padding: 0;
+    background-color: blueviolet;
+}
+.box{
+    position: relative; 
+    float: left;
+    width: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
