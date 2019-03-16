@@ -1,85 +1,107 @@
 
-
-input[type=text]{
-    width: 20%;
-    box-sizing: border-box;
-    
+body {
+    background: #2f313d;
+    color: #46485c;
+    font-family: sans-serif;
 }
 
-body{
- text-align: center;
- background-image: url(../image/Calories.jpg);
- background-repeat: no-repeat;
- background-size: 100%;
- margin: 0;
- }
-
- #login{
-     margin:10%;
-     margin-left: 35%;
-     background-color:#ffffff;
-     min-height: 30%;
-     padding-top:5%;
-     padding-bottom: 5%;
-     width: 30%;
-     vertical-align: middle; 
-
- }
-
- #username input{
-     width: 65%;
-     background-color:#f8f8f8;
-     padding-top:2% ;
-     padding-bottom: 2%;
-     padding-left: 1%;
-     border: 0;
- }
-
- #checkbox{
-padding-right: 40%;
- }
-
- #loginbutton button
- {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 3% 6%;
+h2 {
+    color: #46485c;
+    font-size: 15px;
+    font-weight: 600;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #46485c;
     text-decoration: none;
-    display: inline-block;
-    font-size: 90%;
-    width: 65%;
- }
-
- #loginbutton button:hover{
-     background-color: #cc2020;
 }
 
-/* ----- AICI AVEM FOOTERUL ------ */
-footer{
-  height:10%;
-  background-color:#64666d;
-  padding-bottom: 1%;
+.login {
+    width: 250px;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -184px 0px 0px -155px;
+    background: rgba(0,0,0,0.2);
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
 }
-footer ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+
+input[type="text"], input[type="password"] {
+    width: 250px;       
+    padding: 25px 0px;        
+    background: transparent;        
+    border: 0;        
+    border-bottom: 1px solid rgba(255,255,255,0.04);        
+    outline: none;        
+    color: #46485c;        
+}           
+
+input[type=checkbox] {
+    display: none;            
+}                
+
+label {
+    display: block;
+    position: absolute;
+    margin-top: 2px;
+    width: 4px;
+    height: 4px;                                
+    border-radius: 50%;                
+    background: #46485c;                
+    content: "";                
+    transition: all 0.3s ease-in-out;                
+    cursor: pointer;                
+    border: 3px solid #252730;                
+    box-shadow: 0px 0px 0px 2px #46485c;                
+}                    
+
+#remember:checked ~ label[for=remember] {
+    background: #b5cd60;
+    border: 3px solid #252730;
+     box-shadow: 0px 0px 0px 2px #b5cd60;
 }
-footer ul li{
-    padding-left: 2%;
-    float: left;
+
+input[type="submit"] {
+    background: #b5cd60;
+    border: 0;
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
-footer img{
-    padding-top:6%;
+
+input[type="submit"]:hover {
+    background: #16aa56;
 }
-#image{
-    padding-top: 5%;
-    margin-left: 10%;
-}
-li p{
-    padding-top: 3%;
-    padding-left: 10px;
-}
+
+.forgot {
+    margin-top: 30px; 
+    display: block;
+    font-size: 11px;
+    text-align: center; 
+    font-weight: bold;
+}                                      
+                                    
+.forgot:hover {
+    margin-top: 30px;
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    color: #6d7781;                                                                                                         
+}                                                                                                                                                   
+                                                                          
+                                        
+.remember {                                        
+    padding: 30px 0px;
+    font-size: 12px;
+    text-indent: 25px;
+    line-height: 15px;
+}                                                                                                                                   
+                                                                                                                                                         
