@@ -8,36 +8,17 @@
         </title>
         
     </head>
-
     <body>
-        <div id="login">
-        <form>
-            <div id="username">
-            <input type="text" name="username" placeholder="username" onfocus="this.placeholder=''" onblur="this.placeholder='username'">
-            <br>
-            <br>
-            <input type="text" name="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'"> 
+        <div class="login">
+            <h2>Sign in</h2>
+            <input name="username" placeholder="Username" type="text"/>
+            <input id="pw" name="password" placeholder="Password" type="password"/>
+            <div class="remember">
+              <input checked="" id="remember" name="remember" type="checkbox"/>
+              <label for="remember"></label>Remember me
             </div>
-            <br>
-            <div id="checkbox">
-            <input type="checkbox"> Remember me.
-            </div>
-            <br>
-            <div id="loginbutton">
-                <button type="button">Login</button>
-            </div>
-                <br>
-            Not registered? <a href="Register.html" >Create an account.</a>
-        </form>
+            <input type="submit" value="Sign in"/>
+            <a class="forgot" href="RecoverPassword.html">Forgot your password?</a>
         </div>
-        <footer>
-            <ul>
-                <li><div id="image">
-                        <img src="../image/banner-2.0.png" height="35" width="120"> 
-                    </div>
-                </li>
-                <li><p>Copyright Cal-o-Web 2019.All rights reserved.</p></li>
-            </ul>
-        </footer>
     </body>
 </html>
