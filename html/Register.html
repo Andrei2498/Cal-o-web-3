@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<html lang="EN">
-    <head>
-        <title>Register</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
-        <link rel="stylesheet" type="text/css" href="../css/register.css">
-    </head>
-    <body>
-        <div class="register">
-            <section class="form">
-                <h1>Register Form</h1>
-                <form>
-                    <div id="inputContent">
-                    <input type="text" name="fName" value="First name"> 
-                    <br><br>
-                    <input type="text" name="lName" value="Last name">
-                    <br>
-                    <br>   
-                    <input type="text" name="email" value="Your Email">
-                    <br><br>   
-                    <input type="text" name="email" value="Your UserName">
-                    <br><br>
-                    <input type="text" name="password" value="Enter password"><br><br>
-                    <input type="text" name="second-password" value="re-enter password"><br><br>
-                    </div>
-                    <div id="registerBtn">
-                        <button type="button">Register</button>
-                    </div>
-                </form>
-            </section>
-        </div>
-        <footer>
-            <ul>
-              <li><div id="image">
-                    <img src="../image/banner-2.0.png" height="35" width="120"> 
-                  </div>
-              </li>
-              <li><p>Copyright Cal-o-Web 2019.All rights reserved.</p></li>
-            </ul>
-        </footer>
-    </body>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/register.css">
+</head>
+
+<body>
+    <div class='register'>
+        <h2>Register</h2>
+        <input name='FirstName' placeholder='FirstName' type='text'/>
+        <input name='LastName' placeholder='LastName' type='text'/>
+        <input name='Email' placeholder='Your e-mail address' type='text'/>
+        <input name='Username' placeholder='Username' type='text'/>
+        <input id='pw' name='password' placeholder='Password' type='password'/>
+        <input id='pw' name='re-password' placeholder='Re-Password' type='password'/>
+        <input type='submit' value='Create Acount'/>
+      </div>
+</body>
+
 </html>
