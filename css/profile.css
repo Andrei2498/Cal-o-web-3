@@ -97,7 +97,7 @@ aside h2{
     padding: 0;
 }
 .reteteUrmate{
-    position: relative;
+    position: sticky;
     float: left;
     color: white;
     margin: 60px;
@@ -137,14 +137,14 @@ aside h2{
     margin-right: 10px;
     background-color: black;
 }
+/* ----- AICI AVEM FOOTERUL ------ */
 footer{
-  position: relative;
-  float: left;
+    width: 100%;
+    float: left;
   height:10%;
-  width: 100%;
   background-color:#64666d;
   padding-top: 10px;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 footer ul{
     list-style-type: none;
@@ -153,24 +153,23 @@ footer ul{
     overflow: hidden;
 }
 footer ul li{
-    padding-left: 2%;
-    width: 160px;
+    padding-left: 3%;
     float: left;
 }
 footer img{
     padding-top:3%;
     padding-bottom: 10px;
-    height: 60px;
-    width: 120px;
+    height: 50px;
+    width: 90px;
 }
 #image{
-    padding-top: 25px;
-    padding-bottom: 30px;
+    padding-top: 5%;
     margin-left: 10%;
 }
-p {
-    font-size: 20px;
-    padding-top: 30px;
+li p{
     padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 20px;
+}
+.footerfix{
+    width: 100%;
 }

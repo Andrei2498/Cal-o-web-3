@@ -4,6 +4,7 @@ body{
     line-height: 1.5;   
     margin: 0;
     padding: 0;
+    background-color: rgb(67, 87, 186);
 }
 .container{
     width: 100%;
@@ -65,21 +66,26 @@ body {
 }
 .mySlides {
     display: none;
-    min-height: 500px;
+    height: 500px;
 }
-img {
+.mySlides img {
     vertical-align: middle;
+    height: 500px; 
+    width:80%;
+    margin-left: 10%;
+
 }
 
 .slideshow-container {
-  min-height: 500px;
+    height: 500px;
 }
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 1px;
+  width: 1px;
+  margin: 0;
   background-color: #bbb;
   border-radius: 50%;
+  opacity: 0;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
@@ -106,6 +112,8 @@ img {
 
 /* ----- AICI AVEM FOOTERUL ------ */
 footer{
+    width: 100%;
+    float: left;
   height:10%;
   background-color:#64666d;
   padding-top: 10px;
@@ -117,8 +125,7 @@ footer ul{
     overflow: hidden;
 }
 footer ul li{
-    padding-left: 2%;
-    width: 160px;
+    padding-left: 3%;
     float: left;
 }
 footer img{
@@ -132,6 +139,30 @@ footer img{
     margin-left: 10%;
 }
 li p{
-    padding-top: 3%;
     padding-left: 10px;
+    
+}
+.footerfix{
+    width: 100%;
+}
+/*   RUBRICA CU INFORMATII DE AJUTOR   */
+.aplicationInformation {
+    width: 100%;
+    min-height:100px ;
+    float: left;
+    background-color: rgb(67, 87, 186);
+}
+.aplicationInformation h3 {
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.aplicationInformation h3 a {
+    color: red;
+}
+.aplicationInformation h3 a:hover {
+    color: black;
+}
+.aplicationInformation h3 a:visited {
+    color: yellowgreen;
 }
