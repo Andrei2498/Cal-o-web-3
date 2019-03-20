@@ -30,13 +30,13 @@ header h1{
 .mybar{
     overflow: hidden;
     background-color: brown;
-    padding-right: 10%;
+    padding-left: 15%;
     min-height: 50px;
     padding-top: 3px;
     padding-bottom: 3px;
 }
 .mybar a{
-    float: right;
+    float: left;
     text-align: center;
     padding: 15px 15px;
     text-decoration: none;
