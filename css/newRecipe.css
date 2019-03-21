@@ -61,7 +61,7 @@ h2 {
     box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
     }
 
-input[type="text"], input[type="password"] {
+input[type="text"] {
 width: 32%;
 padding: 25px 0px;
 background: transparent;
@@ -85,7 +85,7 @@ input[type="submit"] {
     transition: background 0.3s ease-in-out;
     margin-left:25%;
     }
-td input[value="delete"]{
+td input[type="submit"]{
     background: #b5cd60;
     border: 0;
     width: 100%;
@@ -106,11 +106,18 @@ table{
     border: 2px solid black;
     margin-top:10px;
 }
-td,th{
+td,th {
     height: 50px;
     width:25%;
     text-align: center;
     border:1px solid black;
+}
+td input[type="text"]{
+    margin:0;
+    padding:0;
+    width:100%;
+    text-align: center;
+
 }
 p{
     width:100%;
