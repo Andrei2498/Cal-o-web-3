@@ -46,10 +46,8 @@ header img{
 .form {
     color:#aaaaaa;
     width: 50%;
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    margin: -184px 0px 30px -155px;
+    position: relative;
+    margin: 50px auto;
     background: rgba(0,0,0,0.2);
     padding: 20px 30px;
     border-radius: 5px;
