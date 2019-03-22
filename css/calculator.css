@@ -42,6 +42,7 @@ img{
     margin-left: 4px;
     margin-right: 4px;
     color: aliceblue;
+    margin-bottom: 2px;
 }
 .mybar a:hover{
     background-color: aqua;
