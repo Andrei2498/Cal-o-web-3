@@ -28,12 +28,13 @@ header{
     margin-left: 4px;
     margin-right: 4px;
     color: aliceblue;
+    margin-bottom: 2px;
 }
 .mybar a:hover{
     background-color: aqua;
     color: black;
 }
-.mybar a.active{
+.mybar a .active{
     background-color: greenyellow;
     color: brown;
 }
@@ -90,7 +91,7 @@ aside h2{
 .reteteUrmate h1{
     text-align: center;
 }
-.boxLine {
+.boxLine { 
     position: relative;
     float: left;
     width: 90%;
