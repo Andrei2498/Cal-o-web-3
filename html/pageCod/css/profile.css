@@ -1,0 +1,160 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;   
+    margin: 0;
+    padding: 0;
+    background: #2f313d; 
+}
+header{
+    background: gray;
+    color: #ffffff;
+    height: 140px;
+}
+.mybar{
+    overflow: hidden;
+    background-color: brown;
+    padding-left: 15%;
+    min-height: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.mybar a{
+    float: left;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: aliceblue;
+    margin-bottom: 2px;
+}
+.mybar a:hover{
+    background-color: aqua;
+    color: black;
+}
+.mybar a.active{
+    background-color: greenyellow;
+    color: brown;
+}
+img{
+    width: 100%;
+    height: 140px;
+}
+.profilImage {
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    width: 250px;
+    padding-left: 50px; 
+    padding-top: 50px;
+    float: left;
+}
+.profilImage img{
+    height: 250px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+}
+aside{
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 50%;
+    margin-bottom: 4%;
+}
+aside h1{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+
+}
+aside h3{
+    color: white;
+    margin: 10px;
+    padding: 0;
+}
+aside h2{
+    color: white;
+    margin: 10px;
+    padding: 0;
+}
+.reteteUrmate{
+    position: sticky;
+    float: left;
+    color: white;
+    margin: 60px;
+    left: 32%;
+}
+.reteteUrmate h1{
+    text-align: center;
+}
+.boxLine { 
+    position: relative;
+    float: left;
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 15px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #b5cd60;
+}
+.box1 {
+    color: white;
+    position: relative; 
+    float: left;
+    width: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #16aa56;
+}
+.box2 {
+    color: white;
+    position: relative; 
+    float: left;
+    width: 30%;
+    margin-left: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: black;
+}
+/* ----- AICI AVEM FOOTERUL ------ */
+footer{
+    width: 100%;
+    float: left;
+  height:10%;
+  background-color:#64666d;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+footer ul li{
+    padding-left: 3%;
+    float: left;
+}
+footer img{
+    padding-top:3%;
+    padding-bottom: 10px;
+    height: 50px;
+    width: 90px;
+}
+#image{
+    padding-top: 5%;
+    margin-left: 10%;
+}
+li p{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+.footerfix{
+    width: 100%;
+}
