@@ -2,24 +2,31 @@
 <html lang="EN">
     <head>
         <title>New Recipe</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png" />
         <link rel="stylesheet" type="text/css" href="../css/newRecipe.css">
     </head>
     <body>
         
             <header>
-                    <img src="../image/banner-2.0.png" alt="Big-Logo">
+                    <img src="../../image/banner-2.0.png" alt="Big-Logo">
             </header>
-            <div class="mybar">
-                <a href="../index.html">Home</a>
-                <a href="login.html">Login</a>
-                <a href="Register.html">Register</a>
-                <a href="Profile.html">Profile</a>
-                <a href="RecoverPassword.html">Recover Password</a>
-                <a href="calculator.html">Calories Calculator</a>
-                <a class="active" href="newRecipe.html">Add New Recipe</a>
-                <a href="manual.html">User Manual</a>
-            </div>
+            <?php
+                include "../phpFile/view.php";
+                $view=new view();
+                $view->start(0);
+                if(isset($_COOKIE['username'])){
+                    $view->index1PHP(0);
+                    $view->addNewPHP(3);
+                    $view->profilePHP(3);
+                    $view->calculatorPHP(3);
+                    $view->manualPHP(3);
+                    $view->logout(0);
+                } else {
+                    setcookie("accesinterzis",1,time() + 3,"/");
+                    header("Location: ../../index.php");
+                }
+                $view->start(2);
+            ?>
             <div class="form">
                     <h2>Add New Recipe</h2>
                     <input name="RecipeName" placeholder="Recipe Name" type="text"/>

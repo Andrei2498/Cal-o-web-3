@@ -21,6 +21,7 @@
                 $view->profilePHP(2);
                 $view->calculatorPHP(3);
                 $view->manualPHP(3);
+                $view->logout(0);
             } else {
                 setcookie("accesinterzis",1,time() + 3,"/");
                 header("Location: ../../index.php");

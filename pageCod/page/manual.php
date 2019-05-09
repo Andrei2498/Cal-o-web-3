@@ -22,6 +22,7 @@
           $view->profilePHP(3);
           $view->calculatorPHP(3);
           $view->manualPHP(3);
+          $view->logout(0);
         } else {
           $view->index1PHP(0);
           $view->loginPHP(3);

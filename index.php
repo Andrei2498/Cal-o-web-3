@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="EN">
     <head>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style.css">
         <title>Cal o web</title>
         <link rel="shortcut icon" type="image/x-icon" href="image/logo.png" />
     </head>
@@ -10,16 +11,37 @@
         <header>
             <img src="image/banner-2.0.png" alt="Big-Logo">
         </header>
-        <div class="mybar">
-            <a class="active" href="index.html">Home</a>
-            <a href="html/login.html">Login</a>
-            <a href="html/Register.html">Register</a>
-            <a href="html/Profile.html">Profile</a>
-            <a href="html/RecoverPassword.html">Recover Password</a>
-            <a href="html/calculator.html">Calories Calculator</a>
-            <a href="html/newRecipe.html">Add New Recipe</a>
-            <a href="html/manual.html">User Manual</a>
-        </div>
+        <?php
+        include "./pageCod/phpFile/view.php";
+        $view=new view();
+        $view->start(0);
+        if(isset($_COOKIE['username']) && isset($_COOKIE['password'])){
+          $view->index1PHP(1);
+          $view->addNewPHP(0);
+          $view->profilePHP(0);
+          $view->calculatorPHP(0);
+          $view->manualPHP(0);
+          $view->logout(1);
+        } else {
+          $view->index1PHP(1);
+          $view->loginPHP(0);
+          $view->registerPHP(0);
+          $view->recoverPHP(0);
+          $view->manualPHP(0);
+        }
+        $view->start(2);
+        if(isset($_COOKIE['accesinterzis'])){
+          echo '<div class="interzis">
+          <h2>
+            Accesul persoanelor nelogate catrea acea pagina este interzisa.
+          </h2>
+          <h2>
+            <a href="pageCod/page/login.php">Loghaza-te</a> sau <a href="pageCod/page/Register.php">
+            inregistreaza-te</a> pentru a accesa acea pagina.
+            </h2>
+          </div>';
+        }
+        ?>
         <div class="slideshow-container">
             <div class="mySlides fade">
               <img src="image/calories5res.jpg" alt="Image1">
@@ -40,12 +62,12 @@
               cat mai sanatos.
             </h3>
             <h3>
-              &nbsp;&nbsp;&nbsp;&nbsp;Pentru a utiliza aceasta aplicatie trebuie sa fiti <a href="html/login.html">logat</a> cu un cont valid. 
-              Daca nu aveti un cont apasati <a href="html/Register.html">aici</a> pentru a va crea imediat un cont.
+              &nbsp;&nbsp;&nbsp;&nbsp;Pentru a utiliza aceasta aplicatie trebuie sa fiti <a href="pageCod/page/login.php">logat</a> cu un cont valid. 
+              Daca nu aveti un cont apasati <a href="pageCod/page/Register.php">aici</a> pentru a va crea imediat un cont.
             </h3>
             <h3>
               &nbsp;&nbsp;&nbsp;&nbsp;In cazul in care sunteti pentru prima data la noi pe site 
-              va recomandam sa parcurgeti un scurt tutorial disponibil la linkul urmator <a href="html/manual.html">tutorial</a>
+              va recomandam sa parcurgeti un scurt tutorial disponibil la linkul urmator <a href="pageCod/page/manual.php">tutorial</a>
             </h3>
         </div>
         <footer>

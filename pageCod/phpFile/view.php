@@ -95,5 +95,13 @@ class view{
             echo '<a href="Profile.php">Profile</a>' ;
         }
     }
+
+    function logout($active){
+        if($active == 0){
+            echo '<a href= "../phpFile/logout.php">Logout</a>';
+        } else {
+            echo '<a href= "pageCod/phpFile/logout.php">Logout</a>';
+        }
+    }
 }
 ?>
