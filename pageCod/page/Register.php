@@ -9,8 +9,16 @@
 
 <body>
     <div class="form">
+        <?php
+        if (isset($_COOKIE['failed'])) {
+            echo '<h2 style="color:red;">Acest nume deja exista</h2>';
+        }
+        if (isset($_COOKIE['ExistaDeja'])) {
+            echo $_COOKIE['ExistaDeja'];
+        }
+        ?>
         <h2>Register</h2>
-        <form>
+        <form action="../phpFile/register.php" method="POST">
             <input name="FirstName" placeholder="FirstName" type="text" />
             <input name="LastName" placeholder="LastName" type="text" />
             <input name="Email" placeholder="Your e-mail address" type="text" />

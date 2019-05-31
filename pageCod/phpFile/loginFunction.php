@@ -3,7 +3,6 @@ include "database.php";
 
 if(verify($_POST['username'],$_POST['password'])){
     setcookie("username",$_POST['username'],time() + (86400 * 30),"/");
-    setcookie("password",$_POST['password'],time() + (86400 * 30),"/");
     setcookie("failed",null,-1,"/");
     header("Location: ../../index.php");
 }else {

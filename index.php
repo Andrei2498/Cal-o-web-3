@@ -15,7 +15,7 @@
         include "./pageCod/phpFile/view.php";
         $view=new view();
         $view->start(0);
-        if(isset($_COOKIE['username']) && isset($_COOKIE['password'])){
+        if(isset($_COOKIE['username'])){
           $view->index1PHP(1);
           $view->addNewPHP(0);
           $view->profilePHP(0);
