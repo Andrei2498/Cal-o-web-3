@@ -7,7 +7,7 @@ class Validation{
         $statement->bind_param(1, $username);
         $statement->execute();
         
-        if($statement == NULL) {
+        if($statement != NULL) {
             return true;
         }
         return false;
@@ -22,7 +22,6 @@ class Validation{
         if(strpos($email, '@') === false){
             return false;
         }
-
         
         return true;
     }

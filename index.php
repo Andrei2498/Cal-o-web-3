@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="EN">
+    <?php
+      session_start();
+    ?>
     <head>
         <link rel="stylesheet" href="style.css">
         <title>Cal o web</title>
