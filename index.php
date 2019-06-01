@@ -49,11 +49,27 @@
             <div class="mySlides fade">
               <img src="image/images.jpg" alt="Image2">
             </div>
+            <div class="mySlides fade">
+                <img src="image/ingrasat.jpg" alt="Image2">
+            </div>
+            <div class="mySlides fade">
+                <a href="pageCod/page/login.php"><img src="image/Login.jpg" alt="Image2"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="pageCod/page/login.php"><img src="image/Naturist.jpg" alt="Image2"></a>
+            </div>
+            <div class="mySlides fade">
+                <img src="image/Calories.jpg" alt="Image2">
+            </div>
             <div style="opacity: 0;">
               <span class="dot"></span> 
               <span class="dot"></span> 
-              <span class="dot"></span> 
-            </div>     
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
         </div>
         <div class="aplicationInformation">
             <h3>
@@ -100,7 +116,7 @@
               }
               slides[slideIndex-1].style.display = "block";  
               dots[slideIndex-1].className += " active";
-              setTimeout(showSlides, 5000);
+              setTimeout(showSlides, 2000);
             }
         </script>
     </body>
