@@ -1,5 +1,5 @@
 <?php
-include "database.php";
+include "Database.php";
 
 if(verify($_POST['username'],$_POST['password'])){
     setcookie("username",$_POST['username'],time() + (86400 * 30),"/");
@@ -10,7 +10,7 @@ if(verify($_POST['username'],$_POST['password'])){
     header("Location: ../../page/login.php");
 }
 function verify($username,$password){
-    $db=new database();
+    $db=new Database();
     $conn=$db->OpenCon();
     $sql = "SELECT username,password FROM users where username='$username' and password='$password'";
     $result =$conn->query($sql);

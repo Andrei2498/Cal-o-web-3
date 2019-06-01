@@ -1,7 +1,7 @@
 <?php
-require 'database.php';
+require 'Database.php';
 if (isset($_GET['value'])&& strlen($_GET['value'])>2){
-    $database = new database();
+    $database = new Database();
     $conn= $database->OpenCon();
     $value = $_GET['value'];
     $sql = "select nume from retete where nume like '%$value%'";

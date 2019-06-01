@@ -1,5 +1,14 @@
 <?php
-class database{
+
+class Database {
+
+    /**
+     * Database constructor.
+     */
+    public function __construct()
+    {
+    }
+
     public function OpenCon()
     {
         $dbhost = "localhost";

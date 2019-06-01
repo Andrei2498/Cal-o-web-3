@@ -17,7 +17,7 @@
         }
         ?>
         <h2>Register</h2>
-        <form action="../pageCod/phpFile/register.php" method="POST">
+        <form action="../pageCod/phpFile/RegisterFunctions/register.php" method="POST">
             <input name="FirstName" placeholder="FirstName" type="text" />
             <input name="LastName" placeholder="LastName" type="text" />
             <input name="Email" placeholder="Your e-mail address" type="text" />
