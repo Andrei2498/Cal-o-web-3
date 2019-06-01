@@ -1,5 +1,5 @@
 <?php
-require '../Database.php';
+require 'Database.php';
 if (isset($_GET['value'])&& strlen($_GET['value'])>2){
     $database = new database();
     $conn= $database->OpenCon();
