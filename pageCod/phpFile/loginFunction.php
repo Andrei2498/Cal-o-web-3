@@ -1,5 +1,5 @@
 <?php
-include "Database.php";
+require "Database.php";
 
 if(verify($_POST['username'],$_POST['password'])){
     setcookie("username",$_POST['username'],time() + (86400 * 30),"/");
