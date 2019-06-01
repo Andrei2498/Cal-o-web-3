@@ -100,7 +100,7 @@ class view{
         if($active == 0){
             echo '<a href= "../pageCod/phpFile/logout.php">Logout</a>';
         } else {
-            echo '<a href= "../pageCod/phpFile/logout.php">Logout</a>';
+            echo '<a href= "./pageCod/phpFile/logout.php">Logout</a>';
         }
     }
 }
