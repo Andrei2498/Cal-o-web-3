@@ -42,7 +42,7 @@ $view->start(2);
 
                 </tr>
                 <tr id="input">
-                    <td><input name="ingredientName" placeholder="Ingredient" type="text"/></td>
+                    <td><input name="ingredientName" id="findIngredient" onkeyup="searchResult(this.value);" placeholder="Ingredient" type="text"/></td>
                     <td><input name="ingredientQuantity" placeholder="Quantity" type="text"/></td>
                     <td><input name="ingredientMeasurement" placeholder="Measurement Unit" type="text"/></td>
                     <td><input type="submit" value="Add Ingredient" name="addIngredient"
