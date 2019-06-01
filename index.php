@@ -12,7 +12,8 @@
             <img src="image/banner-2.0.png" alt="Big-Logo">
         </header>
         <?php
-        include "./pageCod/phpFile/view.php";
+        include "pageCod/phpFile/view.php";
+        include 'pageCod/util/config.php';
         $view=new view();
         $view->start(0);
         if(isset($_COOKIE['username'])){
@@ -31,15 +32,7 @@
         }
         $view->start(2);
         if(isset($_COOKIE['accesinterzis'])){
-          echo '<div class="interzis">
-          <h2>
-            Accesul persoanelor nelogate catrea acea pagina este interzisa.
-          </h2>
-          <h2>
-            <a href="pageCod/page/login.php">Loghaza-te</a> sau <a href="pageCod/page/Register.php">
-            inregistreaza-te</a> pentru a accesa acea pagina.
-            </h2>
-          </div>';
+          echo UNAUTHORIZED;
         }
         ?>
         <div class="slideshow-container">
