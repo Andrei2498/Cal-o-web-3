@@ -187,13 +187,13 @@ input[type="submit"] {
 
 .tabela table{
     width:100%;
-    border: 2px solid black;
+    border: 2px solid #414141;
     margin-top:10px;
 }
 .tabela td,th{
     height: 50px;
     width:20%;
     text-align: center;
-    border:1px solid black;
+    border:1px solid #414141;
 }
 
