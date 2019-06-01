@@ -1,4 +1,32 @@
 
+var searchRecipeResult = (value) => {
+    var URL;
+    if(document.activeElement.getAttribute("name")==="recipeName")
+        URL = document.URL.split("/page")[0]+'/pageCod/phpFile/searchRecipeRequest.php';
+    else if(document.activeElement.getAttribute("name")==="Ingredient")
+        URL = document.URL.split("/page")[0]+'/pageCod/phpFile/searchRequest.php';
+    console.log(URL);
+    console.log(value);
+    const data = JSON.stringify({
+        msg: value
+    });
+
+    const request = new XMLHttpRequest();
+
+    request.addEventListener('load', function () {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText);
+        }
+        if (request.status === 404) {
+            console.log('not found');
+        }
+    });
+    request.open('GET', URL+'?value=' + value, true);
+    request.send(data);
+
+}
+
+
 function addNewLine() {
     var ingredientName = document.getElementsByName("Ingredient")[0];
     var ingredientQuantity = document.getElementsByName("Quantity")[0];

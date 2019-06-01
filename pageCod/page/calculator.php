@@ -32,7 +32,7 @@ $view->start(2);
 <div class="calculator">
     <h2>Calories calculator</h2>
     <div class="RecipeName">
-        <input name="recipeName" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
+        <input name="recipeName" onkeyup="searchRecipeResult(this.value);" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
                onblur="this.placeholder='Name of the Recipe'"/>
     </div>
 
@@ -51,7 +51,7 @@ $view->start(2);
     <div class="ingredient1" id="AddIngredient">
         <ul>
             <li>
-                <input style="width:200px" name="Ingredient" placeholder="Name of ingredient" type="text"
+                <input style="width:200px" name="Ingredient" onkeyup="searchRecipeResult(this.value);" placeholder="Name of ingredient" type="text"
                        onfocus="this.placeholder=''" onblur="this.placeholder='Name of ingredient'">
             </li>
             <li style="margin-left:40px">
