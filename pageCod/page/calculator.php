@@ -3,6 +3,7 @@
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png"/>
     <link rel="stylesheet" type="text/css" href="../css/calculator.css">
+    <script src="../../javascript/calculator.js"></script>
     <title>
         Calculator
     </title>
@@ -44,20 +45,6 @@ $view->start(2);
                 <th>Edit</th>
                 <th>Delete</th>
 
-            </tr>
-            <tr>
-                <td><input name="ingredientName" placeholder="Ingredient" type="text"/></td>
-                <td><input name="ingredientQuantity" placeholder="Quantity" type="text"/></td>
-                <td><input name="ingredientMeasurement" placeholder="Calories" type="text" readonly/></td>
-                <td><input type="submit" value="Edit"/></td>
-                <td><input type="submit" value="Delete"/></td>
-            </tr>
-            <tr>
-                <td>Apa</td>
-                <td>2</td>
-                <td>500 calories</td>
-                <td><input type="submit" value="Edit"/></td>
-                <td><input type="submit" value="Delete"/></td>
             </tr>
         </table>
     </div>
@@ -109,38 +96,4 @@ $view->start(2);
     </div> -->
 </div>
 </body>
-<script>
-
-    function addNewLine() {
-        var ingredientName = document.getElementsByName("Ingredient")[0];
-        var ingredientQuantity = document.getElementsByName("Quantity")[0];
-        var row = document.createElement('tr');
-        var name = document.createElement('td');
-        var quantity = document.createElement('td');
-        var count = document.createElement('td');
-        var buttonE = document.createElement('td');
-        var buttonD = document.createElement('td');
-        var buttonEdit = document.createElement('input');
-        buttonEdit.type = "submit";
-        buttonEdit.value = "Edit";
-        var buttonDelete = document.createElement('input');
-        buttonDelete.type = "submit";
-        buttonDelete.value = "Delete";
-        // buttonDelete.onclick = ev => {
-        //     deleteLine();
-        //     return false;
-        // };
-        buttonE.append(buttonEdit);
-        buttonD.append(buttonDelete);
-        name.innerText = ingredientName.value;
-        quantity.innerText = ingredientQuantity.value;
-        count.innerText = "sds";
-        row.appendChild(name);
-        row.appendChild(quantity);
-        row.appendChild(count);
-        row.appendChild(buttonE);
-        row.appendChild(buttonD);
-        document.getElementById('tabelaIngrediente').appendChild(row);
-    }
-</script>
 </html>
