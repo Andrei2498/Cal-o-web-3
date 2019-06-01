@@ -6,7 +6,7 @@ if(verify($_POST['username'],$_POST['password'])){
     setcookie("failed",null,-1,"/");
     header("Location: ../../index.php");
 }else {
-    setcookie("failed",1,time() + 30, "/");
+    setcookie("failed",1,time() + 3, "/");
     header("Location: ../page/login.php");
 }
 function verify($username,$password){

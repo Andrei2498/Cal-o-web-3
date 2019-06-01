@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="EN">
-
 <head>
     <title>Register</title>
     <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
