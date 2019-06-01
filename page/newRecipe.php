@@ -2,22 +2,22 @@
 <html lang="EN">
 <head>
     <title>New Recipe</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="../css/newRecipe.css">
-    <script src="../../javascript/newRecipe.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png"/>
+    <link rel="stylesheet" type="text/css" href="../pageCod/css/newRecipe.css">
+    <script src="../javascript/newRecipe.js"></script>
 </head>
 <body>
 
 <header>
-    <img src="../../image/banner-2.0.png" alt="Big-Logo">
+    <img src="../image/banner-2.0.png" alt="Big-Logo">
 </header>
 <?php
-include "../phpFile/view.php";
+include "../pageCod/phpFile/view.php";
 $view = new view();
 $view->start(0);
 if (isset($_COOKIE['username'])) {
     $view->index1PHP(0);
-    $view->addNewPHP(3);
+    $view->addNewPHP(2);
     $view->profilePHP(3);
     $view->calculatorPHP(3);
     $view->manualPHP(3);

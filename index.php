@@ -46,10 +46,10 @@
                 <img src="image/ingrasat.jpg" alt="Image2">
             </div>
             <div class="mySlides fade">
-                <a href="pageCod/page/login.php"><img src="image/Login.jpg" alt="Image2"></a>
+                <a href="page/login.php"><img src="image/Login.jpg" alt="Image2"></a>
             </div>
             <div class="mySlides fade">
-                <a href="pageCod/page/login.php"><img src="image/Naturist.jpg" alt="Image2"></a>
+                <a href="page/login.php"><img src="image/Naturist.jpg" alt="Image2"></a>
             </div>
             <div class="mySlides fade">
                 <img src="image/Calories.jpg" alt="Image2">
@@ -71,12 +71,12 @@
               cat mai sanatos.
             </h3>
             <h3>
-              &nbsp;&nbsp;&nbsp;&nbsp;Pentru a utiliza aceasta aplicatie trebuie sa fiti <a href="pageCod/page/login.php">logat</a> cu un cont valid. 
-              Daca nu aveti un cont apasati <a href="pageCod/page/Register.php">aici</a> pentru a va crea imediat un cont.
+              &nbsp;&nbsp;&nbsp;&nbsp;Pentru a utiliza aceasta aplicatie trebuie sa fiti <a href="page/login.php">logat</a> cu un cont valid.
+              Daca nu aveti un cont apasati <a href="page/Register.php">aici</a> pentru a va crea imediat un cont.
             </h3>
             <h3>
               &nbsp;&nbsp;&nbsp;&nbsp;In cazul in care sunteti pentru prima data la noi pe site 
-              va recomandam sa parcurgeti un scurt tutorial disponibil la linkul urmator <a href="pageCod/page/manual.php">tutorial</a>
+              va recomandam sa parcurgeti un scurt tutorial disponibil la linkul urmator <a href="page/manual.php">tutorial</a>
             </h3>
         </div>
         <footer>

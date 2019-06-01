@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="EN">
     <head>
-        <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png" />
-        <link rel="stylesheet" type="text/css" href="../css/profile.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
+        <link rel="stylesheet" type="text/css" href="../pageCod/css/profile.css">
         <title>
             Profile
         </title>
     </head>
     <body>
         <header>
-            <img src="../../image/banner-2.0.png" alt="Big-Logo">
+            <img src="../image/banner-2.0.png" alt="Big-Logo">
         </header>
         <?php
-            include "../phpFile/view.php";
+            include "../pageCod/phpFile/view.php";
             $view=new view();
             $view->start(0);
             if(isset($_COOKIE['username'])){
@@ -29,7 +29,7 @@
             $view->start(2);
         ?>
         <div class="profilImage">
-            <img src="../../image/Profil_Baiat.png" alt="Profil">
+            <img src="../image/Profil_Baiat.png" alt="Profil">
             
         </div>
         <aside>
@@ -80,7 +80,7 @@
         <footer>
           <ul>
             <li><div id="image">
-                  <img src="../../image/banner-2.0.png" alt="" height="35" width="120"> 
+                  <img src="../image/banner-2.0.png" alt="" height="35" width="120">
                 </div>
             </li>
             <li>

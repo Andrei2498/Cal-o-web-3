@@ -9,7 +9,7 @@ class view{
     }
     function index1PHP($actives){
         if($actives == 0){
-            echo '<a href="../../index.php">Home</a>';
+            echo '<a href="../index.php">Home</a>';
         } else if($actives == 1){
             echo '<a class="active" href="index.php">Home</a>';
         } else if($actives == 2) {
@@ -20,7 +20,7 @@ class view{
     }
     function loginPHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/login.php">Login</a>';
+            echo '<a href="./page/login.php">Login</a>';
         } else if($active == 1) {
             echo '<a class="active" href="./html/page/login.php">Login</a>';
         } else if($active == 2) {
@@ -31,7 +31,7 @@ class view{
     }
     function registerPHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/Register.php">Register</a>' ;
+            echo '<a href="./page/Register.php">Register</a>' ;
         } else if($active == 1) {
             echo '<a class="active" href="./Register.php">Register</a>' ;
         } else if($active == 2) {
@@ -42,7 +42,7 @@ class view{
     }
     function recoverPHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/RecoverPassword.php">Recover Password</a>' ;
+            echo '<a href="./page/RecoverPassword.php">Recover Password</a>' ;
         } else if($active == 1) {
             echo  '<a class="active" href="./RecoverPassword.php">Recover Password</a>';
         } else if($active == 2) {
@@ -53,7 +53,7 @@ class view{
     }
     function manualPHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/manual.php">User Manual</a>' ;
+            echo '<a href="page/manual.php">User Manual</a>' ;
         } else if($active == 1) {
             echo '<a class="active" href="./manual.php">User Manual</a>' ;
         } else if($active == 2) {
@@ -64,7 +64,7 @@ class view{
     }
     function addNewPHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/newRecipe.php">Add New Recipe</a>' ;
+            echo '<a href="page/newRecipe.php">Add New Recipe</a>' ;
         } else if($active == 1) {
             echo '<a class="active" href="./newRecipe.php">Add New Recipe</a>' ;
         } else if($active == 2) {
@@ -75,7 +75,7 @@ class view{
     }
     function calculatorPHP($active){
         if($active == 0){
-            echo  '<a href="pageCod/page/calculator.php">Calories Calculator</a>';
+            echo  '<a href="page/calculator.php">Calories Calculator</a>';
         } else if($active == 1) {
             echo  '<a class="active" href="./calculator.php">Calories Calculator</a>';
         } else if($active == 2) {
@@ -86,7 +86,7 @@ class view{
     }
     function profilePHP($active){
         if($active == 0){
-            echo '<a href="pageCod/page/Profile.php">Profile</a>' ;
+            echo '<a href="page/Profile.php">Profile</a>' ;
         } else if($active == 1) {
             echo '<a class="active" href="./Profile.php">Profile</a>' ;
         } else if($active == 2) {
@@ -98,9 +98,9 @@ class view{
 
     function logout($active){
         if($active == 0){
-            echo '<a href= "../phpFile/logout.php">Logout</a>';
+            echo '<a href= "../pageCod/phpFile/logout.php">Logout</a>';
         } else {
-            echo '<a href= "pageCod/phpFile/logout.php">Logout</a>';
+            echo '<a href= "../pageCod/phpFile/logout.php">Logout</a>';
         }
     }
 }

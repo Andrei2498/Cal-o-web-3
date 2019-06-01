@@ -2,7 +2,7 @@
 <html lang="EN">
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
-        <link rel="stylesheet" type="text/css" href="../css/RecoverPassword.css">
+        <link rel="stylesheet" type="text/css" href="../pageCod/css/RecoverPassword.css">
     <title>
         Reset Password
     </title>

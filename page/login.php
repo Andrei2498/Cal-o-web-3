@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="EN">
     <head>
-            <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png" />
-            <link rel="stylesheet" type="text/css" href="../css/login.css">
+            <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
+            <link rel="stylesheet" type="text/css" href="../pageCod/css/login.css">
         <title>
             Login
         </title>
@@ -16,7 +16,7 @@
                 }
             ?>
             <h2>Sign in</h2>
-            <form action="../phpFile/loginFunction.php" method="POST">
+            <form action="../pageCod/phpFile/loginFunction.php" method="POST">
                 <input name="username" placeholder="Username" type="text"/>
                 <input id="pw" name="password" placeholder="Password" type="password"/>
 

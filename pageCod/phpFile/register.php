@@ -11,7 +11,7 @@ if( verify($_POST['Username'], $_POST['password'], $_POST['re-password'],$_POST[
     setcookie("failed", null, -1, "/");
     header("Location: ../../index.php");
 } else {
-    header( "Location: ../page/Register.php");
+    header( "Location: ../../page/Register.php");
 }
 
 function verify($username, $password,$repassword,$firstname,$lastname,$email)

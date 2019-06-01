@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="EN">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="../../image/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="../css/calculator.css">
-    <script src="../../javascript/calculator.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png"/>
+    <link rel="stylesheet" type="text/css" href="../pageCod/css/calculator.css">
+    <script src="../javascript/calculator.js"></script>
     <title>
         Calculator
     </title>
 </head>
 <body>
 <header>
-    <img src="../../image/banner-2.0.png" alt="Big-Logo">
+    <img src="../image/banner-2.0.png" alt="Big-Logo">
 </header>
 <?php
-include "../phpFile/view.php";
+include "../pageCod/phpFile/view.php";
 $view = new view();
 $view->start(0);
 if (isset($_COOKIE['username'])) {
     $view->index1PHP(0);
     $view->addNewPHP(3);
     $view->profilePHP(3);
-    $view->calculatorPHP(3);
+    $view->calculatorPHP(2);
     $view->manualPHP(3);
     $view->logout(0);
 } else {

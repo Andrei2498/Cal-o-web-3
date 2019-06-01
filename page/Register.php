@@ -3,7 +3,7 @@
 <head>
     <title>Register</title>
     <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
-    <link rel="stylesheet" type="text/css" href="../css/register.css">
+    <link rel="stylesheet" type="text/css" href="../pageCod/css/register.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         }
         ?>
         <h2>Register</h2>
-        <form action="../phpFile/register.php" method="POST">
+        <form action="../pageCod/phpFile/register.php" method="POST">
             <input name="FirstName" placeholder="FirstName" type="text" />
             <input name="LastName" placeholder="LastName" type="text" />
             <input name="Email" placeholder="Your e-mail address" type="text" />
