@@ -24,11 +24,13 @@ var searchResult = (value) => {
 }
 
 function errorMessage() {
-    var root = document.getElementById("errorMessages");
-    var outMessage = document.createElement('h3');
-    outMessage.id = "temp";
-    outMessage.textContent = "Acest username este deja folosit";
-    root.append(outMessage);
+    if(document.getElementById("temp") == null){
+        var root = document.getElementById("errorMessages");
+        var outMessage = document.createElement('h3');
+        outMessage.id = "temp";
+        outMessage.textContent = "Acest username este deja folosit";
+        root.append(outMessage);
+    }
 }
 
 function deleteErrorMessage() {
@@ -36,5 +38,4 @@ function deleteErrorMessage() {
     if(root != null){
         root.parentNode.removeChild(root);
     }
-
 }
