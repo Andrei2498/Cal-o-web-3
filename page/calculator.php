@@ -76,16 +76,16 @@ $view->start(2);
     <div class="ingredient1">
         <ul>
             <li>
-                <i>Number of ingredients:</i>
+                <i >Number of ingredients:</i>
             </li>
             <li>
-                <i>2</i>
+                <i id="TotalIngrediente">0</i>
             </li>
             <li>
                 <i> Total amount of calories: </i>
             </li>
             <li>
-                <i style="margin-left:50px">1000 Calories</i>
+                <i id="TotalCalorii" style="margin-left:50px">0</i>
             </li>
         </ul>
     </div>

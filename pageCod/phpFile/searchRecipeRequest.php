@@ -4,14 +4,15 @@ if (isset($_GET['value'])&& strlen($_GET['value'])>2){
     $database = new Database();
     $conn= $database->OpenCon();
     $value = $_GET['value'];
-    $sql = "select nume from retete where nume like '%$value%'";
+    $sql = "select id,nume from retete where nume like '%$value%'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($row);
+    $stmt->bind_result($id,$row);
     $array = [];
     $i=1;
     while($stmt->fetch()){
+        $array[$i]['id']=$id;
         $array[$i]['nume'] = $row;
         $i++;
     }
