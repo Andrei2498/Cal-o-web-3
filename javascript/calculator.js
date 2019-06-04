@@ -3,10 +3,13 @@ var myNode;
 var dataList = [];
 var umList = [];
 var ingredientsCalories = [];
+var listaRetete = [];
 var calorii = 0;
 var ingName;
 var dataListRecipe;
 var dataListIngredient;
+var numarIngrediente=0;
+var numartTotalCalorii=0;
 
 window.onload = function () {
     ingName = document.getElementById("findIngredient");
@@ -18,6 +21,8 @@ window.onload = function () {
             measure.value = umList[this.value];
     });
 };
+
+
 
 var searchRecipeResult = (value) => {
     if (value.length > 2) {
@@ -33,9 +38,7 @@ var searchRecipeResult = (value) => {
         }
         console.log(URL);
         console.log(value);
-        const data = JSON.stringify({
-            msg: value
-        });
+
 
         const request = new XMLHttpRequest();
 
@@ -50,7 +53,7 @@ var searchRecipeResult = (value) => {
             }
         });
         request.open('GET', URL + '?value=' + value, true);
-        request.send(data);
+        request.send();
     } else {
         clearDataList();
     }
@@ -58,9 +61,11 @@ var searchRecipeResult = (value) => {
 
 
 function addNewLine() {
+    var totalIngrediente=document.getElementById("TotalIngrediente");
+    var totalCalorii=document.getElementById("TotalCalorii");
     var ingredientName = document.getElementsByName("Ingredient")[0];
     var ingredientQuantity = document.getElementsByName("Quantity")[0];
-    if (!isNaN(ingredientQuantity.value)) {
+    if (!isNaN(ingredientQuantity.value)&&ingredientQuantity.value.length>0&&ingredientsCalories[ingredientName.value]!==undefined) {
         var row = document.createElement('tr');
         var name = document.createElement('td');
         var quantity = document.createElement('td');
@@ -78,7 +83,7 @@ function addNewLine() {
         buttonD.append(buttonDelete);
         name.innerText = ingredientName.value;
         quantity.innerText = ingredientQuantity.value;
-        count.innerText = "sds";
+        count.innerText = calculateCalories(ingredientQuantity.value,ingredientName.value);
         row.appendChild(name);
         row.appendChild(quantity);
         row.appendChild(count);
@@ -88,17 +93,29 @@ function addNewLine() {
 
         buttonDelete.onclick = ev => {
             deleteLine();
+            totalIngrediente.innerText=numarIngrediente.toString();
+            totalCalorii.innerText=numartTotalCalorii.toString();
             return false;
         };
         buttonEdit.onclick = ev => {
             editLine();
             return false;
         };
+        numarIngrediente++;
+        numartTotalCalorii+=parseInt(count.innerText);
+        totalIngrediente.innerText=numarIngrediente.toString();
+        totalCalorii.innerText=numartTotalCalorii.toString();
+
     }
 
 
 }
 
+
+function calculateCalories(quantity,numeIngredient){
+    return (quantity*ingredientsCalories[numeIngredient])/100;
+
+}
 
 function editLine() {
     tableRef = document.getElementById("tabelaIngrediente");
@@ -138,6 +155,8 @@ function editLine() {
 function deleteLine() {
     tableRef = document.getElementById("tabelaIngrediente");
     currentLine = document.activeElement.parentNode.parentNode;
+    numarIngrediente--;
+    numartTotalCalorii-=parseInt(currentLine.childNodes.item(2).textContent);
     tableRef.removeChild(currentLine);
 }
 
@@ -160,6 +179,7 @@ function dataListCreate(json, ok) {
 
         option.value = item["nume"];
         ingredientsCalories[item["nume"]] = item["valoare"];
+        listaRetete[item["denumire"]] = item["id"];
         umList[item["nume"]] = item["um"];
         i++;
         // datalist.push(item["nume"]);
@@ -177,3 +197,18 @@ Array.prototype.contains = function (needle) {
     }
     return false;
 };
+
+function length(obj) {
+    return Object.keys(obj).length;
+}
+
+
+function handleKeyPress(e){
+    var key=e.keyCode || e.which;
+    if (key===13){
+        var input = document.getElementById('ajax');
+        if(listaRetete[input.innerText]!==undefined){
+            console.log("Merge");
+        }
+    }
+}

@@ -32,7 +32,7 @@ $view->start(2);
 <div class="calculator">
     <h2>Calories calculator</h2>
     <div class="RecipeName">
-        <input name="recipeName" id="ajax" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
+        <input name="recipeName" id="ajax" onkeypress="handleKeyPress(event)" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
                onblur="this.placeholder='Name of the Recipe'"/>
         <datalist id="json-datalist-Recipe"></datalist>
     </div>
@@ -76,16 +76,16 @@ $view->start(2);
     <div class="ingredient1">
         <ul>
             <li>
-                <i>Number of ingredients:</i>
+                <i >Number of ingredients:</i>
             </li>
             <li>
-                <i>2</i>
+                <i id="TotalIngrediente">0</i>
             </li>
             <li>
                 <i> Total amount of calories: </i>
             </li>
             <li>
-                <i style="margin-left:50px">1000 Calories</i>
+                <i id="TotalCalorii" style="margin-left:50px">0</i>
             </li>
         </ul>
     </div>
