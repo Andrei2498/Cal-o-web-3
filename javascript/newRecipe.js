@@ -1,44 +1,44 @@
-var i = 1;
-var myNode;
-var dataList = [];
-var umList = [];
-var ingredientsCalories = [];
-var calorii = 0;
-var ingName;
+var dataList = []; // lista cu ingredientele cu lista ingredientelor din bd care au fost descoperite.
+var ingredientsCalories = []; // lista cu numarul de calorii pentru ingredientele din dataList
 
+var i = 0;
+var calorii = 0; // numarul de calorii ce este afisat pentru reteta(initial este 0).
+
+
+var ingName;
+var ingQu;
+
+var tableRef;
+
+var input;
+
+var errorMsg;
+
+const requestURL = document.URL.split("/page")[0] + '/pageCod/phpFile/searchRequest.php';
 window.onload = function () {
     myNode = document.getElementById("json-find");
     ingName = document.getElementById("findIngredient");
-    measure = document.getElementById("measure");
-    measure.ReadOnly = true;
-    ingName.addEventListener('input', function () {
-        console.log(dataList);
-        if (dataList.contains(this.value))
-            measure.value = umList[this.value];
-    });
+    tableRef = document.getElementById("ingredientsTable");
+    input = document.getElementById("input");
+    ingQu = document.getElementsByName("ingredientQuantity")[0];
+    errorMsg = document.getElementsByTagName("h3")[0];
 };
 
+var checkValue = (value) => {
+    if (value < 1 && value !== "") {
+        document.activeElement.parentNode.style.borderColor = "red";
+    } else
+        document.activeElement.parentNode.style.borderColor = "black";
 
+};
 var searchResult = (value) => {
+    if (!dataList.contains(value)) {
+        document.activeElement.parentNode.style.borderColor = "red";
+    } else {
+        document.activeElement.parentNode.style.borderColor = "black";
+    }
     if (value.length > 2) {
-        const URL = document.URL.split("/page")[0] + '/pageCod/phpFile/searchRequest.php';
-        console.log(URL);
-        console.log(value);
-
-        const request = new XMLHttpRequest();
-
-        request.addEventListener('load', function () {
-            if (this.readyState === 4 && this.status === 200) {
-                var jsonOptions = JSON.parse(request.responseText);
-                console.log(request.responseText);
-                dataListCreate(jsonOptions);
-            }
-            if (request.status === 404) {
-                console.log('not found');
-            }
-        });
-        request.open('GET', URL + '?value=' + value, true);
-        request.send();
+        httpRequest(value, "GET");
     } else {
         clearDataList();
     }
@@ -59,8 +59,6 @@ function dataListCreate(json) {
 
         option.value = item["nume"];
         ingredientsCalories[item["nume"]] = item["valoare"];
-        umList[item["nume"]] = item["um"];
-        i++;
         dataList.push(item["nume"]);
         // Add the <option> element to the <datalist>.
         myNode.appendChild(option);
@@ -69,63 +67,53 @@ function dataListCreate(json) {
 
 
 function addNewLine() {
-    if (dataList.contains(document.getElementsByName("ingredientName")[0].value)) {
-        var tableRef = document.getElementById("ingredientsTable");
-        var input = document.getElementById("input");
-        var ingredientName = document.getElementsByName("ingredientName")[0];
-        var ingredientQuantity = document.getElementsByName("ingredientQuantity")[0];
-        var ingredientMeasure = document.getElementsByName("ingredientMeasurement")[0];
+    if (dataList.contains(ingName.value)) {
+
+        i++;
         var line = document.createElement('tr');
         var nume = document.createElement('td');
         var quantity = document.createElement('td');
-        var measure = document.createElement('td');
         var button = document.createElement('td');
+
         var buttonDelete = document.createElement('input');
+
         buttonDelete.type = "submit";
         buttonDelete.value = "delete";
         buttonDelete.onclick = ev => {
             deleteLine();
             return false;
         };
+
         button.append(buttonDelete);
-        var inpNume = document.createElement('input');
-        inpNume.value = ingredientName.value;
-        inpNume.type = "text";
-        inpNume.readOnly = true;
-        inpNume.name = "NumeIngredient" + i;
-        var inpQuantity = document.createElement('input');
-        inpQuantity.value = ingredientQuantity.value;
-        inpQuantity.type = "text";
-        inpQuantity.readOnly = true;
-        inpQuantity.name = "Quantity" + i;
-        var inpMeasure = document.createElement('input');
-        inpMeasure.value = ingredientMeasure.value;
-        inpMeasure.type = "text";
-        inpMeasure.readOnly = true;
-        inpMeasure.name = "Measure" + i;
-        i++;
-        nume.append(inpNume);
-        quantity.append(inpQuantity);
-        measure.append(inpMeasure);
-        ingredientName.value = null;
-        ingredientQuantity.value = null;
-        ingredientMeasure.value = null;
+
+        nume.innerText = ingName.value;
+        quantity.innerText = ingQu.value;
+
         line.append(nume);
         line.append(quantity);
-        line.append(measure);
         line.append(button);
+
         tableRef.append(line);
         tableRef.append(input);
-        calorii = calorii + ingredientsCalories[inpNume.value] * inpQuantity.value;
+
+        calorii = calorii + ingredientsCalories[ingName.value] * ingQu.value / 100;
+
+        ingName.value = null;
+        ingQu.value = null;
+
         updateCalorii();
     }
 }
 
 function deleteLine() {
+    i--;
     tableRef = document.getElementById("ingredientsTable");
     currentLine = document.activeElement.parentNode.parentNode;
-    if (currentLine.id !== 'input')
+    if (currentLine.id !== 'input') {
+        calorii = calorii - ingredientsCalories[currentLine.childNodes.item(0).textContent] * currentLine.childNodes.item(1).textContent / 100;
+        updateCalorii();
         tableRef.removeChild(currentLine);
+    }
 }
 
 Array.prototype.contains = function (needle) {
@@ -140,3 +128,65 @@ function updateCalorii() {
     text = p.innerText.split(':')[0];
     p.innerText = text + ": " + calorii;
 }
+
+function addRecipeButton() {
+    if (i === 0) {
+        errorMsg.innerText = "Reteta nu are nici un ingredient";
+        return false;
+    }
+    if (document.getElementsByName("RecipeName")[0].value === "") {
+        errorMsg.innerText = "Reteta nu are alocata un nume";
+        document.getElementsByName("RecipeName")[0].style.borderColor = "red";
+        return false;
+    }
+    var array = [];
+    var recipeName = document.getElementsByName("RecipeName")[0].value;
+    var i = 0;
+    array[i++] = {recipeName: recipeName};
+    tableRef.childNodes.forEach(function (child) {
+        if (child.id !== "input" && child.nodeName === "TR") {
+            numeProdus = child.childNodes[0].textContent;
+            cantitateProdus = child.childNodes[1].textContent;
+            array[i++] = {numeProdus: numeProdus, cantitateProdus: cantitateProdus};
+        }
+    });
+    var json = JSON.stringify(array);
+    httpRequest(json, "POST");
+    return false;
+}
+
+
+function httpRequest(arg, method) {
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+            switch (method) {
+                case "POST":
+                    if (this.readyState === 4 && this.status === 200) {
+                        console.log(request.responseText);
+                    }
+                    break;
+                case "GET":
+                    if (this.readyState === 4 && this.status === 200) {
+                        var jsonOptions = JSON.parse(request.responseText);
+                        console.log(request.responseText);
+                        dataListCreate(jsonOptions);
+                    }
+                    if (request.status === 404) {
+                        console.log('not found');
+                    }
+                    break;
+            }
+        }
+    );
+    if (method === "POST") {
+        var params = "addRecipe=" + arg;
+        request.open(method, requestURL, true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send(params);
+    } else {
+        request.open('GET', requestURL + '?value=' + arg, true);
+        request.send();
+    }
+
+}
+

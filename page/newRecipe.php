@@ -30,14 +30,14 @@ $view->start(2);
 ?>
 <div class="form">
     <h2>Add New Recipe</h2>
-    <form method="post" action="newRecipe.php">
+    <h3></h3>
+    <form>
         <input name="RecipeName" placeholder="Recipe Name" type="text"/>
         <div class="ingredients">
             <table id="ingredientsTable">
                 <tr>
                     <th>ingredient</th>
-                    <th>cantitate</th>
-                    <th>Unitate Masura</th>
+                    <th>Cantitate (gr)</th>
                     <th>Action</th>
 
                 </tr>
@@ -47,28 +47,17 @@ $view->start(2);
                                onkeyup="searchResult(this.value);" placeholder="Ingredient" type="text"/>
                         <datalist id="json-find"></datalist>
                     </td>
-                    <td><input name="ingredientQuantity" placeholder="Quantity" type="number" min="1"/></td>
-                    <td><input name="ingredientMeasurement" id="measure" placeholder="Measurement Unit" type="text"/></td>
+                    <td><input name="ingredientQuantity"  id="setQuantity" onkeyup="checkValue(this.value);" placeholder="Quantity" type="number" min="1"/></td>
                     <td><input type="submit" value="Add Ingredient" name="addIngredient"
                                onclick="addNewLine();return false;"/></td>
                 </tr>
             </table>
             <p id="calorii">Total Calories: 0</p>
         </div>
-        <input type="submit" value="Add Recipe" name="AddRecipe"/>
+        <input type="submit" value="Add Recipe" name="AddRecipe" onclick="addRecipeButton(); return false;"/>
     </form>
 </div>
 
 </body>
 
-
-<?php
-if (isset($_POST['AddRecipe'])) {
-    foreach ($_POST as $key => $value) {
-        if (strpos($key, 'NumeIngredient') === 0) {
-            echo '<script>console.log("' . $value . '")</script>';
-        }
-    }
-}
-?>
 </html>
