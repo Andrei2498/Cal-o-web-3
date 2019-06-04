@@ -3,6 +3,7 @@ var myNode;
 var dataList = [];
 var umList = [];
 var ingredientsCalories = [];
+var listaRetete = [];
 var calorii = 0;
 var ingName;
 var dataListRecipe;
@@ -92,6 +93,8 @@ function addNewLine() {
 
         buttonDelete.onclick = ev => {
             deleteLine();
+            totalIngrediente.innerText=numarIngrediente.toString();
+            totalCalorii.innerText=numartTotalCalorii.toString();
             return false;
         };
         buttonEdit.onclick = ev => {
@@ -152,6 +155,8 @@ function editLine() {
 function deleteLine() {
     tableRef = document.getElementById("tabelaIngrediente");
     currentLine = document.activeElement.parentNode.parentNode;
+    numarIngrediente--;
+    numartTotalCalorii-=parseInt(currentLine.childNodes.item(2).textContent);
     tableRef.removeChild(currentLine);
 }
 
@@ -174,6 +179,7 @@ function dataListCreate(json, ok) {
 
         option.value = item["nume"];
         ingredientsCalories[item["nume"]] = item["valoare"];
+        listaRetete[item["denumire"]] = item["id"];
         umList[item["nume"]] = item["um"];
         i++;
         // datalist.push(item["nume"]);
@@ -194,4 +200,15 @@ Array.prototype.contains = function (needle) {
 
 function length(obj) {
     return Object.keys(obj).length;
+}
+
+
+function handleKeyPress(e){
+    var key=e.keyCode || e.which;
+    if (key===13){
+        var input = document.getElementById('ajax');
+        if(listaRetete[input.innerText]!==undefined){
+            console.log("Merge");
+        }
+    }
 }

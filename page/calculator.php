@@ -32,7 +32,7 @@ $view->start(2);
 <div class="calculator">
     <h2>Calories calculator</h2>
     <div class="RecipeName">
-        <input name="recipeName" id="ajax" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
+        <input name="recipeName" id="ajax" onkeypress="handleKeyPress(event)" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
                onblur="this.placeholder='Name of the Recipe'"/>
         <datalist id="json-datalist-Recipe"></datalist>
     </div>

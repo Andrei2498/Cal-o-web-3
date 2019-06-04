@@ -13,7 +13,7 @@ if (isset($_GET['value'])&& strlen($_GET['value'])>2){
     $i=1;
     while($stmt->fetch()){
         $array[$i]['id']=$id;
-        $array[$i]['nume'] = $row;
+        $array[$i]['denumire'] = $row;
         $i++;
     }
     header('Content-Type:application/json');
