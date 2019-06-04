@@ -49,12 +49,12 @@ $view->start(2);
                     </td>
                     <td><input name="ingredientQuantity"  id="setQuantity" onkeyup="checkValue(this.value);" placeholder="Quantity" type="number" min="1"/></td>
                     <td><input type="submit" value="Add Ingredient" name="addIngredient"
-                               onclick="addNewLine();return false;"/></td>
+                               onclick="addNewLine(); return false;"/></td>
                 </tr>
             </table>
             <p id="calorii">Total Calories: 0</p>
         </div>
-        <input type="submit" value="Add Recipe" name="AddRecipe" onclick="addRecipeButton(); return false;"/>
+        <input type="submit" value="Add Recipe" name="AddRecipe" onclick="return addRecipeButton();"/>
     </form>
 </div>
 
