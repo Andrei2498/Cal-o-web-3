@@ -3,7 +3,7 @@
 <head>
     <title>New Recipe</title>
     <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="../pageCod/css/newRecipe.css">
+    <link rel="stylesheet" type="text/css" href="../pageCod/css/newRecipe.css?version=51">
     <script src="../javascript/newRecipe.js"></script>
 </head>
 <body>
@@ -42,14 +42,18 @@ $view->start(2);
 
                 </tr>
                 <tr id="input">
-                    <td><input name="ingredientName" id="findIngredient" onkeyup="searchResult(this.value);" placeholder="Ingredient" type="text"/></td>
-                    <td><input name="ingredientQuantity" placeholder="Quantity" type="text"/></td>
-                    <td><input name="ingredientMeasurement" placeholder="Measurement Unit" type="text"/></td>
+                    <td>
+                        <input name="ingredientName" id="findIngredient" list="json-find"
+                               onkeyup="searchResult(this.value);" placeholder="Ingredient" type="text"/>
+                        <datalist id="json-find"></datalist>
+                    </td>
+                    <td><input name="ingredientQuantity" placeholder="Quantity" type="number" min="1"/></td>
+                    <td><input name="ingredientMeasurement" id="measure" placeholder="Measurement Unit" type="text"/></td>
                     <td><input type="submit" value="Add Ingredient" name="addIngredient"
                                onclick="addNewLine();return false;"/></td>
                 </tr>
             </table>
-            <p>Total Calories:0</p>
+            <p id="calorii">Total Calories: 0</p>
         </div>
         <input type="submit" value="Add Recipe" name="AddRecipe"/>
     </form>
@@ -62,7 +66,7 @@ $view->start(2);
 if (isset($_POST['AddRecipe'])) {
     foreach ($_POST as $key => $value) {
         if (strpos($key, 'NumeIngredient') === 0) {
-            echo '<script>console.log("'.$value.'")</script>';
+            echo '<script>console.log("' . $value . '")</script>';
         }
     }
 }

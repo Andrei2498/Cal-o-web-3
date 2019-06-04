@@ -60,7 +60,7 @@ h2 {
     box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
     }
 
-input[type="text"]{
+input[type="text"] ,input[type="number"]{
 width: 32%;
 padding: 25px 0px;
 background: transparent;
@@ -93,7 +93,7 @@ td input[value="delete"],td input[value="Add Ingredient"]{
     margin:0;
     cursor: pointer;
 }
-td input[type="text"]{
+td input[type="text"] , input[type="number"]{
     margin:0;
     padding: 0;
     width: 100%;
