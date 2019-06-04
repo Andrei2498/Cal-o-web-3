@@ -155,7 +155,7 @@ function addRecipeButton() {
     var json = JSON.stringify(array);
     httpRequest(json, "POST");
     alert("The Recipe has been added !!");
-    return true;
+    return false;
 }
 
 

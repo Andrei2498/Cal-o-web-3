@@ -24,29 +24,31 @@ if (isset($_GET['value']) && strlen($_GET['value']) > 2) {
 
 }
 if (isset($_POST["addRecipe"]) && !empty($_POST["addRecipe"])) {
-    $ok;
+
     $input = json_decode($_POST["addRecipe"]);
-    $sql = 'select id from users where username = ?';
+    $sql = 'select id_persoana from users where username = ?';
     $stmt = $conn->prepare($sql);
+
     $stmt->bind_param("s", $_COOKIE['username']);
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($id);
     $stmt->fetch();
+
     $user_id =$id;
 
-    $sql = 'insert into retete (id,nume_reteta,id_creator) values (null,?,?)';
+    $sql = 'insert into retete (id,nume,id_creator) values (null,?,?)';
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("si",$input[0]->recipeName,$user_id);
     $stmt->execute();
 
     $recipe_id = $conn->insert_id;
 
-    $sql = 'insert into produse_reteta (id_reteta,id_produs,cantitate) value (?,?,?)';
+    $sql = 'insert into cantitati (id_reteta,id_produs,cantitate) value (?,?,?)';
     $stmt=$conn->prepare($sql);
     for ($i = 1 ; $i <sizeof($input);$i++){
         $stmt->bind_param("iii",$recipe_id,$input[$i]->idProdus,$input[$i]->cantitateProdus);
         $stmt->execute();
     }
-
+    
 }
