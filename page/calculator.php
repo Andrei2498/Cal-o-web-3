@@ -32,8 +32,9 @@ $view->start(2);
 <div class="calculator">
     <h2>Calories calculator</h2>
     <div class="RecipeName">
-        <input name="recipeName" onkeyup="searchRecipeResult(this.value);" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
+        <input name="recipeName" id="ajax" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
                onblur="this.placeholder='Name of the Recipe'"/>
+        <datalist id="json-datalist-Recipe"></datalist>
     </div>
 
     <div class="tabela">
@@ -51,8 +52,9 @@ $view->start(2);
     <div class="ingredient1" id="AddIngredient">
         <ul>
             <li>
-                <input style="width:200px" name="Ingredient" onkeyup="searchRecipeResult(this.value);" placeholder="Name of ingredient" type="text"
+                <input id="findIngredient" style="width:200px" name="Ingredient" list="json-datalist" onkeyup="searchRecipeResult(this.value);" placeholder="Name of ingredient" type="text"
                        onfocus="this.placeholder=''" onblur="this.placeholder='Name of ingredient'">
+                <datalist id="json-datalist"></datalist>
             </li>
             <li style="margin-left:40px">
                 <input style="width: 50px" name="Quantity" placeholder="Quantity" type="text"
