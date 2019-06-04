@@ -12,30 +12,20 @@
         <div id="errorMessages">
 
         </div>
-        <?php
-        if (isset($_COOKIE['failed'])) {
-            echo '<h2 style="color:red;">Acest nume deja exista</h2>';
-        }
-        if (isset($_COOKIE['ExistaDeja'])) {
-            echo $_COOKIE['ExistaDeja'];
-        }
-        ?>
         <h2>Register</h2>
-        <form action="../pageCod/phpFile/RegisterFunctions/register.php" method="POST">
-            <input name="FirstName" placeholder="FirstName" type="text" />
-            <input name="LastName" placeholder="LastName" type="text" />
-            <input name="Email" placeholder="Your e-mail address" type="text" />
-            <input name="Username" placeholder="Username" type="text" onkeyup="searchResult(this.value);" />
-            <input id="pw" name="password" placeholder="Password" type="password" />
-            <input id="re-pw" name="re-password" placeholder="Re-Password" type="password" />
+        <form action="../pageCod/phpFile/RegisterFunctions/register.php" method="POST" name="restu">
+            <input id="fm" name="FirstName" placeholder="FirstName" type="text" onkeyup="testNume(this.value,this.id);" />
+            <input id="lm" name="LastName" placeholder="LastName" type="text" onkeyup="testNume(this.value,this.id);"/>
+            <input id="em" name="Email" placeholder="Your e-mail address" type="text"/>
+            <input id= "nm" name="Username" placeholder="Username" type="text" onkeyup="searchResult(this.value);" />
+            <input id="pw" name="password" placeholder="Password" type="password" onkeyup="dinamicPassTest(this.value)"/>
+            <input id="re-pw" name="re-password" placeholder="Re-Password" type="password" onkeyup="testPassword()"/>
             <div class="terms">
-                <input checked="" id="terms" name="terms" type="checkbox" />
+                <input checked="" id="terms" name="terms" type="checkbox"/>
                 <label for="terms"></label><a href="">Termeni si Conditii.</a>
             </div>
-            <input type="submit" value="Create Acount" />
+            <input type="submit" value="Create Acount" onclick="return submitRegisetr();" />
         </form>
-
-
     </div>
 </body>
 
