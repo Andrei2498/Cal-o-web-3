@@ -1,5 +1,6 @@
 var dataList = []; // lista cu ingredientele cu lista ingredientelor din bd care au fost descoperite.
 var ingredientsCalories = []; // lista cu numarul de calorii pentru ingredientele din dataList
+var idIngrediente = [];
 
 var i = 0;
 var calorii = 0; // numarul de calorii ce este afisat pentru reteta(initial este 0).
@@ -58,6 +59,7 @@ function dataListCreate(json) {
         // Set the value using the item in the JSON array.
 
         option.value = item["nume"];
+        idIngrediente[item["nume"]] = item["id"];
         ingredientsCalories[item["nume"]] = item["valoare"];
         dataList.push(item["nume"]);
         // Add the <option> element to the <datalist>.
@@ -142,16 +144,17 @@ function addRecipeButton() {
     var array = [];
     var recipeName = document.getElementsByName("RecipeName")[0].value;
     var i = 0;
-    array[i++] = {recipeName: recipeName};
+    array[i++] = {recipeName: recipeName, calorii:calorii};
     tableRef.childNodes.forEach(function (child) {
         if (child.id !== "input" && child.nodeName === "TR") {
-            numeProdus = child.childNodes[0].textContent;
+            idProdus = idIngrediente[child.childNodes[0].textContent];
             cantitateProdus = child.childNodes[1].textContent;
-            array[i++] = {numeProdus: numeProdus, cantitateProdus: cantitateProdus};
+            array[i++] = {idProdus:idProdus , cantitateProdus: cantitateProdus};
         }
     });
     var json = JSON.stringify(array);
     httpRequest(json, "POST");
+    alert("The Recipe has been added !!");
     return false;
 }
 
