@@ -8,6 +8,7 @@ if(isset($_COOKIE['username']) && isset($_COOKIE['password']) && isset($_COOKIE[
     insertUser();
     $aux = selectUserId();
     insertCont($aux);
+
     setcookie("username", null, -1, "/");
     setcookie("password", null, -1,"/");
     setcookie("firstname", null, -1, "/");
@@ -21,7 +22,6 @@ if(isset($_COOKIE['username']) && isset($_COOKIE['password']) && isset($_COOKIE[
     setcookie("lastname", null, -1, "/");
     setcookie("email", null, -1, "/");
     header("Location: ../../../page/Register.php");
-    echo "asdasdasd";
 }
 
 function selectUserId(){
@@ -51,11 +51,9 @@ function insertUser(){
         $_COOKIE['lastname'],$_COOKIE['email'],$_POST['Inaltime'],
         $_POST['Greutate'],$_POST['Varsta'],$_POST['Gen']);
     if($stms->execute()){
-        echo "a mers bine";
         $stms->close();
         $conn->close();
     } else {
-        echo $conn->connect_error;
         $stms->close();
         $conn->close();
     }
@@ -68,11 +66,9 @@ function insertCont($idPers){
     $stms = $conn->prepare($sql);
     $stms->bind_param("iss",$idPers,$_COOKIE['username'],$_COOKIE['password']);
     if($stms->execute()){
-        echo "a mers bine";
         $stms->close();
         $conn->close();
     } else {
-        echo $conn->connect_error;
         $stms->close();
         $conn->close();
     }
