@@ -50,5 +50,5 @@ if (isset($_POST["addRecipe"]) && !empty($_POST["addRecipe"])) {
         $stmt->bind_param("iii",$recipe_id,$input[$i]->idProdus,$input[$i]->cantitateProdus);
         $stmt->execute();
     }
-    
+
 }
