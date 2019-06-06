@@ -96,11 +96,12 @@ aside h2{
     position: sticky;
     float: left;
     color: white;
-    margin: 60px;
+    margin: 20px 60px 0px;
     left: 32%;
 }
 .retetePuse h1{
     text-align: center;
+    margin-bottom: 0px;
 }
 .boxLine { 
     position: relative;
@@ -108,7 +109,6 @@ aside h2{
     width: 90%;
     margin-left: 4%;
     margin-right: 4%;
-    padding: 15px;
     margin-top: 25px;
     padding: 20px;
     background-color: #b5cd60;
