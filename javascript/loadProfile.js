@@ -99,3 +99,83 @@ function allRecipe(id) {
     request.send(data);
 }
 
+function buildLine(jsonFile) {
+    var result = JSON.parse(jsonFile);
+    var root = document.getElementById("baza");
+    var q = 0;
+    for (var i in result) {
+        q = q + 1;
+    }
+    if (q > 0) {
+        var reteUrmateList = document.createElement("div");
+        reteUrmateList.id = "bl";
+        reteUrmateList.className = "boxLine";
+        root.append(reteUrmateList);
+        var t = 0;
+        for (var i in result) {
+            var newBox = document.createElement("div");
+            newBox.id = "bx";
+            newBox.className = "box" + (t % 2 + 1);
+            var nameBox = document.createElement("h1");
+            nameBox.textContent = result[i]['nume'];
+            var value = document.createElement("h2");
+            value.textContent = result[i]['valoare'] + " calorii";
+            var dateC = document.createElement("h2");
+            dateC.textContent = result[i]['data'];
+            newBox.append(nameBox);
+            newBox.append(value);
+            newBox.append(dateC);
+            reteUrmateList.append(newBox);
+            t = t + 1;
+        }
+    }
+}
+
+function buildMyRecipe(nume, prenume, email, inaltime, greutate, sex,id) {
+    if(numberOfMyRecipe(id) > 0){
+        var root = document.getElementById("baza");
+        var baseDiv = document.createElement("div");
+        baseDiv.id = "rp";
+        baseDiv.className = "retetePuse";
+        root.append(baseDiv);
+        var h1 = document.createElement('h1');
+        h1.id = "hrp";
+        h1.textContent = "Retete pe care le-am creat";
+        baseDiv.append(h1);
+        allMyRecipe(id);
+    }
+}
+
+function numberOfMyRecipe(id) {
+    const URL = document.URL.split("/page")[0] + "/pageCod/phpFile/profileLoading/loadNumberOfMyRecipe.php";
+    const data = JSON.stringify({
+        msg: id
+    });
+    var aux = 0;
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+        if (this.readyState === 4 && this.status === 200) {
+            aux = parseInt(this.responseText);
+            // return aux;
+        }
+    });
+    request.open('GET', URL + '?value=' + id, false);
+    request.send(data);
+
+    return aux;
+}
+
+function allMyRecipe(id) {
+    const URL = document.URL.split("/page")[0] + "/pageCod/phpFile/profileLoading/loadAllMyRecipe.php";
+    const data = JSON.stringify({
+        msg: id
+    });
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+        if (this.readyState === 4 && this.status === 200) {
+            buildLine(this.responseText);
+        }
+    });
+    request.open('GET', URL + '?value=' + id, false);
+    request.send(data);
+}
