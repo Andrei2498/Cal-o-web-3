@@ -85,11 +85,12 @@ aside h2{
     position: sticky;
     float: left;
     color: white;
-    margin: 60px;
+    margin: 20px 60px 0px;
     left: 32%;
 }
 .reteteUrmate h1{
     text-align: center;
+    margin-bottom: 0px;
 }
 .retetePuse{
     position: sticky;

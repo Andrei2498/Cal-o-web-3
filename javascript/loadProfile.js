@@ -89,64 +89,30 @@ function buildLine(jsonFile) {
     var nume;
     var valoare;
     var data;
-    console.log(jsonFile);
+    // console.log(jsonFile);
     var root = document.getElementById("baza");
     var reteUrmateList = document.createElement("div");
     reteUrmateList.id = "bl";
     reteUrmateList.className = "boxLine";
     root.append(reteUrmateList);
 
-    // here need iteration
-    // for(i = 1; i <= jsonFile[i].length; i++){
-    //     var newBox = document.createElement("div");
-    //     newBox.id = "bx";
-    //     newBox.className = "box" + (i % 2);
-    //     var nameBox = document.createElement("h1");
-    //     nameBox.textContent = "..";
-    //     var value = document.createElement("h2");
-    //     value.textContent = "..";
-    //     var dateC = document.createElement("h2");
-    //     dateC.textContent = "..";
-    //     newBox.append(nameBox);
-    //     newBox.append(value);
-    //     newBox.append(dateC);
-    //     reteUrmateList.append(newBox);
-    //     console.log(jsonFile[i].i.data);
-    //     console.log("sadasd");
-    // }
-
-    // for(var i = 0; i < jsonFile.length; i++) {
-    //     for (var prop in jsonFile[i]){
-    //         console.log(jsonFile[i][prop].nume);
-    //     }
-    // }
-
-    // var a = jsonFile.toArray();
-    // for(var i=0; i<a.length; i++) {
-    //     console.log(a[i]);
-    // }
-    // var result = [];
-    // for(var i in jsonFile) {
-    //     result.push([i, jsonFile[i]]);
-    //     // console.log(jsonFile[i]);
-    // }
-
-    // var a = [];
-    // for ( var i = 0; i < jsonFile.length; i++ ) {
-    //     a.push( jsonFile[ i ].innerHTML );
-    //     console.log(a[i]);
-    // }
-    var lista;
-    Object.values(jsonFile).forEach(function (item) {
-        // Create a new <option> element.
-        // var option = document.createElement('option');
-        // Set the value using the item in the JSON array.
-
-        // option.value = item["nume"];
-        // idIngrediente[item["nume"]] = item["id"];
-        // ingredientsCalories[item["nume"]] = item["valoare"];
-        // dataList.push(item["nume"]);
-        // Add the <option> element to the <datalist>.
-        // root.appendChild(option);
-    });
+    var t = 0;
+    var result = JSON.parse(jsonFile);
+    for(var i in result){
+        var newBox = document.createElement("div");
+        newBox.id = "bx";
+        newBox.className = "box" + (t % 2 + 1);
+        console.log(newBox.className);
+        var nameBox = document.createElement("h1");
+        nameBox.textContent = result[i]['nume'];
+        var value = document.createElement("h2");
+        value.textContent = result[i]['valoare'] + " calorii";
+        var dateC = document.createElement("h2");
+        dateC.textContent = result[i]['data'];
+        newBox.append(nameBox);
+        newBox.append(value);
+        newBox.append(dateC);
+        reteUrmateList.append(newBox);
+        t = t + 1;
+    }
 }

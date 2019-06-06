@@ -41,26 +41,6 @@
         <div id="baza">
 
         </div>
-<!--        <div id="ru" class="reteteUrmate">-->
-<!--            <h1 id="hru">-->
-<!--                Retete pe care le-am urmat.-->
-<!--            </h1>-->
-<!--        </div>-->
-<!--        class="boxLine"-->
-<!--        <div id="bl" >-->
-<!--            <div class="box1">-->
-<!--                <h1>Reteta magica de slabit</h1>-->
-<!--                <h2>Dimineata: </h2>-->
-<!--                <h2>Pranz: </h2>-->
-<!--                <h2>Seara: </h2>-->
-<!--            </div>-->
-<!--            <div class="box2">-->
-<!--                <h1>Reteta de ingrasat</h1>-->
-<!--                <h2>Dimineata: </h2>-->
-<!--                <h2>Pranz: </h2>-->
-<!--                <h2>Seara: </h2>-->
-<!--            </div>-->
-<!--        </div>-->
 <!--        <div id="rp" class="retetePuse">-->
 <!--            <h1 id="hrp">-->
 <!--                Retete pe care eu le-am postat.-->
