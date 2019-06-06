@@ -7,7 +7,7 @@
             Profile
         </title>
     </head>
-    <body>
+    <body onload="loadImageProfile()">
         <header>
             <img src="../image/banner-2.0.png" alt="Big-Logo">
         </header>
@@ -28,55 +28,59 @@
             }
             $view->start(2);
         ?>
-        <div class="profilImage">
-            <img src="../image/Profil_Baiat.png" alt="Profil">
-            
+        <div id="pi" class="profilImage">
+
         </div>
         <aside>
-            <h2>Pirlog Marcel Ionut</h2>
-            <h2>Email: marcelino_ionut97@yahoo.com</h2>
-            <h3>Inaltime: x metri si y centimetri</h3>
-            <h3>Greutate: z kilograme</h3>
-            <h3>Indicele de masa corporala: t </h3>
+            <h2 id="nm">Nume: </h2>
+            <h2 id="em">Email: </h2>
+            <h3 id="in">Inaltime: </h3>
+            <h3 id="gr">Greitate:  </h3>
+            <h3 id="imc">Indice de masa corporala:</h3>
         </aside>
-        <div class="reteteUrmate">
-            <h1>
-                Retete pe care le-am urmat.
-            </h1>
+        <div id="baza">
+
         </div>
-        <div class="boxLine">
-            <div class="box1">
-                <h1>Reteta magica de slabit</h1>
-                <h2>Dimineata: </h2>
-                <h2>Pranz: </h2>
-                <h2>Seara: </h2>
-            </div>
-            <div class="box2">
-                <h1>Reteta de ingrasat</h1>
-                <h2>Dimineata: </h2>
-                <h2>Pranz: </h2>
-                <h2>Seara: </h2>
-            </div>
-        </div>
-        <div class="reteteUrmate">
-            <h1>
-                Retete pe care eu le-am postat.
-            </h1>
-        </div>
-        <div class="boxLine">
-            <div class="box1">
-                <h1>Reteta magica de slabit</h1>
-                <h2>Dimineata: </h2>
-                <h2>Pranz: </h2>
-                <h2>Seara: </h2>
-            </div>
-            <div class="box2">
-                <h1>Reteta de ingrasat</h1>
-                <h2>Dimineata: </h2>
-                <h2>Pranz: </h2>
-                <h2>Seara: </h2>
-            </div>
-        </div>
+<!--        <div id="ru" class="reteteUrmate">-->
+<!--            <h1 id="hru">-->
+<!--                Retete pe care le-am urmat.-->
+<!--            </h1>-->
+<!--        </div>-->
+<!--        class="boxLine"-->
+<!--        <div id="bl" >-->
+<!--            <div class="box1">-->
+<!--                <h1>Reteta magica de slabit</h1>-->
+<!--                <h2>Dimineata: </h2>-->
+<!--                <h2>Pranz: </h2>-->
+<!--                <h2>Seara: </h2>-->
+<!--            </div>-->
+<!--            <div class="box2">-->
+<!--                <h1>Reteta de ingrasat</h1>-->
+<!--                <h2>Dimineata: </h2>-->
+<!--                <h2>Pranz: </h2>-->
+<!--                <h2>Seara: </h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="rp" class="retetePuse">-->
+<!--            <h1 id="hrp">-->
+<!--                Retete pe care eu le-am postat.-->
+<!--            </h1>-->
+<!--        </div>-->
+<!--        class="boxLine"-->
+<!--        <div id="bl" >-->
+<!--            <div class="box1">-->
+<!--                <h1>Reteta magica de slabit</h1>-->
+<!--                <h2>Dimineata: </h2>-->
+<!--                <h2>Pranz: </h2>-->
+<!--                <h2>Seara: </h2>-->
+<!--            </div>-->
+<!--            <div class="box2">-->
+<!--                <h1>Reteta de ingrasat</h1>-->
+<!--                <h2>Dimineata: </h2>-->
+<!--                <h2>Pranz: </h2>-->
+<!--                <h2>Seara: </h2>-->
+<!--            </div>-->
+<!--        </div>-->
         <footer>
           <ul>
             <li><div id="image">
@@ -90,5 +94,6 @@
             </li>
           </ul>
         </footer>
+        <script src="../javascript/loadProfile.js"></script>
     </body>
 </html>

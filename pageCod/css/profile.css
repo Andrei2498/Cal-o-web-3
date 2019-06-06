@@ -91,6 +91,16 @@ aside h2{
 .reteteUrmate h1{
     text-align: center;
 }
+.retetePuse{
+    position: sticky;
+    float: left;
+    color: white;
+    margin: 60px;
+    left: 32%;
+}
+.retetePuse h1{
+    text-align: center;
+}
 .boxLine { 
     position: relative;
     float: left;
