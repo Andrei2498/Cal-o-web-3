@@ -2,8 +2,8 @@ var dataList = []; // lista cu ingredientele cu lista ingredientelor din bd care
 var ingredientsCalories = []; // lista cu numarul de calorii pentru ingredientele din dataList
 var idIngrediente = [];
 
-var i = 0;
-var calorii = 0; // numarul de calorii ce este afisat pentru reteta(initial este 0).
+var i;
+var calorii ;// numarul de calorii ce este afisat pentru reteta(initial este 0).
 
 
 var ingName;
@@ -23,6 +23,8 @@ window.onload = function () {
     input = document.getElementById("input");
     ingQu = document.getElementsByName("ingredientQuantity")[0];
     errorMsg = document.getElementsByTagName("h3")[0];
+    i=0;
+    calorii = 0;
 };
 
 var checkValue = (value) => {
@@ -143,7 +145,6 @@ function addRecipeButton() {
     }
     var array = [];
     var recipeName = document.getElementsByName("RecipeName")[0].value;
-    var i = 0;
     array[i++] = {recipeName: recipeName, calorii:calorii};
     tableRef.childNodes.forEach(function (child) {
         if (child.id !== "input" && child.nodeName === "TR") {
@@ -155,6 +156,7 @@ function addRecipeButton() {
     var json = JSON.stringify(array);
     httpRequest(json, "POST");
     alert("The Recipe has been added !!");
+    console.log(i);
     return false;
 }
 
@@ -183,7 +185,7 @@ function httpRequest(arg, method) {
     );
     if (method === "POST") {
         var params = "addRecipe=" + arg;
-        request.open(method, requestURL, true);
+        request.open(method, requestURL,  false);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         request.send(params);
     } else {

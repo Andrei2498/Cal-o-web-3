@@ -37,9 +37,9 @@ if (isset($_POST["addRecipe"]) && !empty($_POST["addRecipe"])) {
 
     $user_id =$id;
 
-    $sql = 'insert into retete (id,nume,id_creator) values (null,?,?)';
+    $sql = 'insert into retete (id,nume,id_creator,val_cal) values (null,?,?,?)';
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si",$input[0]->recipeName,$user_id);
+    $stmt->bind_param("sii",$input[0]->recipeName,$user_id,$input[0]->calorii);
     $stmt->execute();
 
     $recipe_id = $conn->insert_id;
