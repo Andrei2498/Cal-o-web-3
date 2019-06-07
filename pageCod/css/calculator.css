@@ -99,7 +99,7 @@ h2 {
     text-align: center;
 }
 
-input[type="text"]{
+input[type="text"],input[type="number"]{
     width: 90%;
     padding: 25px 0px;
     background: transparent;
@@ -197,3 +197,13 @@ input[type="submit"] {
     border:1px solid #414141;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
