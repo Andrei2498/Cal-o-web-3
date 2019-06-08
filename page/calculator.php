@@ -57,8 +57,9 @@ $view->start(2);
                 <datalist id="json-datalist"></datalist>
             </li>
             <li style="margin-left:40px">
-                <input style="width: 50px" name="Quantity" placeholder="Quantity" type="text"
-                       onfocus="this.placeholder=''" onblur="this.placeholder='Quantity'"/>
+                <input style="width: 50px" name="Quantity" placeholder="Quantity" type="number"
+                       onfocus="this.placeholder=''" onblur="this.placeholder='Quantity'"
+                       onkeypress="return event.charCode >= 48"/>
             </li>
             <li style="margin-left:40px; margin-top:20px;">
                 <i> Grams </i>

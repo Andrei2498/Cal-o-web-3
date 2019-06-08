@@ -113,8 +113,16 @@ function addNewLine() {
 
 
 function calculateCalories(quantity,numeIngredient){
+    if(quantity<0)
+        return 0;
     return (quantity*ingredientsCalories[numeIngredient])/100;
 
+}
+
+function calculateQuantity(calories,numeIngredient)  {
+    if(calories<0)
+        return 0;
+    return((calories*100)/ingredientsCalories[numeIngredient])
 }
 
 function editLine() {
@@ -123,11 +131,17 @@ function editLine() {
     var Quantity = document.createElement('td');
     var Count = document.createElement('td');
     var quantity = document.createElement('input');
-    quantity.type = "text";
+    quantity.type = "number";
     var calories = document.createElement('input');
-    calories.type = "text";
+    calories.type = "number";
     Quantity.appendChild(quantity);
     Count.appendChild(calories);
+    Quantity.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
+    Quantity.setAttribute("id","Cantitate");
+    Quantity.setAttribute("onkeypress","return event.charCode >= 48");
+    Count.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
+    Count.setAttribute("id","Calorii");
+    Count.setAttribute("onkeypress","return event.charCode >= 48");
     currentLine.childNodes.item(1).replaceWith(Quantity);
     currentLine.childNodes.item(2).replaceWith(Count);
 
@@ -212,3 +226,20 @@ function handleKeyPress(e){
         }
     }
 }
+
+function realTimeQuantityCaloriesConverter(element) {
+    var numeProdus=element.parentNode.childNodes.item(0);
+    var caloriiCurente =element.parentNode.childNodes.item(2);
+    var cantitateCurenta=element.parentNode.childNodes.item(1);
+    cantitateCurenta.style.borderColor = "";
+    caloriiCurente.style.borderColor = "";
+
+    if(element.getAttribute("id")==="Cantitate"){
+        caloriiCurente.firstChild.value= calculateCalories(cantitateCurenta.firstChild.value,numeProdus.innerText);
+    }
+    else if(element.getAttribute("id")==="Calorii"){
+        cantitateCurenta.firstChild.value=calculateQuantity(caloriiCurente.firstChild.value,numeProdus.innerText);
+    }
+
+}
+
