@@ -47,7 +47,7 @@ $view->start(2);
                                onkeyup="searchResult(this.value);" placeholder="Ingredient" type="text"/>
                         <datalist id="json-find"></datalist>
                     </td>
-                    <td><input name="ingredientQuantity"  id="setQuantity" onkeyup="checkValue(this.value);" placeholder="Quantity" type="number" min="1"/></td>
+                    <td><input name="ingredientQuantity"  id="setQuantity"  onkeyup="checkValue(this.value);" placeholder="Quantity" type="number" min="1"/></td>
                     <td><input type="submit" value="Add Ingredient" name="addIngredient"
                                onclick="addNewLine(); return false;"/></td>
                 </tr>

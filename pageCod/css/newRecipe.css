@@ -72,6 +72,7 @@ border: 0;
 border-bottom: 1px solid rgba(255,255,255,0.04);
 outline: none;
 color: #46485c;
+
 }
 input[name="RecipeName"]{
     width: 100%;
@@ -127,4 +128,10 @@ p{
 }
 .error{
     border-color:red;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

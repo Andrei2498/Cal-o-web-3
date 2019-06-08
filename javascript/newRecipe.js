@@ -2,7 +2,7 @@ var dataList = []; // lista cu ingredientele cu lista ingredientelor din bd care
 var ingredientsCalories = []; // lista cu numarul de calorii pentru ingredientele din dataList
 var idIngrediente = [];
 
-var i;
+var i = 0;
 var calorii ;// numarul de calorii ce este afisat pentru reteta(initial este 0).
 
 
@@ -23,7 +23,7 @@ window.onload = function () {
     input = document.getElementById("input");
     ingQu = document.getElementsByName("ingredientQuantity")[0];
     errorMsg = document.getElementsByTagName("h3")[0];
-    i=0;
+    i = 0;
     calorii = 0;
 };
 
@@ -71,7 +71,7 @@ function dataListCreate(json) {
 
 
 function addNewLine() {
-    if (dataList.contains(ingName.value)) {
+    if (dataList.contains(ingName.value) && ingQu.value>0) {
 
         i++;
         var line = document.createElement('tr');
