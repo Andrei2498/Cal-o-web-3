@@ -95,7 +95,11 @@ function addNewLine() {
         row.appendChild(buttonE);
         row.appendChild(buttonD);
         document.getElementById('tabelaIngrediente').appendChild(row);
-
+        numarIngrediente++;
+        numartTotalCalorii+=parseInt(count.innerText);
+        totalIngrediente.innerText=numarIngrediente.toString();
+        totalCalorii.innerText=numartTotalCalorii.toString();
+        
         buttonDelete.onclick = ev => {
             deleteLine();
             totalIngrediente.innerText=numarIngrediente.toString();
@@ -106,10 +110,7 @@ function addNewLine() {
             editLine();
             return false;
         };
-        numarIngrediente++;
-        numartTotalCalorii+=parseInt(count.innerText);
-        totalIngrediente.innerText=numarIngrediente.toString();
-        totalCalorii.innerText=numartTotalCalorii.toString();
+
 
     }
 
