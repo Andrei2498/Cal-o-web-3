@@ -3,7 +3,6 @@
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
         <link rel="stylesheet" type="text/css" href="../pageCod/css/profile.css">
-
         <title>
             Profile
         </title>
