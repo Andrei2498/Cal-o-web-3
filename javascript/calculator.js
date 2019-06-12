@@ -75,6 +75,7 @@ function addNewLine() {
         var buttonEdit = document.createElement('input');
         buttonEdit.type = "submit";
         buttonEdit.value = "Edit";
+        buttonEdit.setAttribute("onclick",'editLine()');
         var buttonDelete = document.createElement('input');
         buttonDelete.type = "submit";
         buttonDelete.value = "Delete";
@@ -126,40 +127,50 @@ function calculateQuantity(calories,numeIngredient)  {
 }
 
 function editLine() {
+    console.log("Sunt pe edit");
     tableRef = document.getElementById("tabelaIngrediente");
     currentLine = document.activeElement.parentNode.parentNode;
-    var Quantity = document.createElement('td');
-    var Count = document.createElement('td');
-    var quantity = document.createElement('input');
-    quantity.type = "number";
-    var calories = document.createElement('input');
-    calories.type = "number";
-    Quantity.appendChild(quantity);
-    Count.appendChild(calories);
-    Quantity.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
-    Quantity.setAttribute("id","Cantitate");
-    Quantity.setAttribute("onkeypress","return event.charCode >= 48");
-    Count.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
-    Count.setAttribute("id","Calorii");
-    Count.setAttribute("onkeypress","return event.charCode >= 48");
-    currentLine.childNodes.item(1).replaceWith(Quantity);
-    currentLine.childNodes.item(2).replaceWith(Count);
+    var quantity=currentLine.childNodes.item(1);
+    var calories=currentLine.childNodes.item(2);
+    var totalCalorii=document.getElementById("TotalCalorii");
+    var valoareCalorica=currentLine.childNodes.item(2);
+    totalCalorii.innerText=(parseInt(totalCalorii.innerText)-parseInt(valoareCalorica.innerText)).toString();
+    var inputCantitate = document.createElement('input');
+    inputCantitate.type = "number";
+    var inputCalories = document.createElement('input');
+    inputCalories.type = "number";
+    quantity.textContent="";
+    quantity.append(inputCantitate);
+    quantity.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
+    quantity.setAttribute("id","Cantitate");
+    quantity.setAttribute("onkeypress","return event.charCode >= 48");
+    calories.textContent="";
+    calories.append(inputCalories);
+    calories.setAttribute("onkeyup",'realTimeQuantityCaloriesConverter(this)');
+    calories.setAttribute("id","Calorii");
+    calories.setAttribute("onkeypress","return event.charCode >= 48");
 
-    var buttonD = document.createElement('td');
-    var buttonDone = document.createElement('input');
-    buttonDone.type = "submit";
-    buttonDone.value = "Done";
-    buttonD.appendChild(buttonDone);
-    currentLine.childNodes.item(3).replaceWith(buttonD);
+    // var buttonD = document.createElement('td');
+    // var buttonDone = document.createElement('input');
+    // buttonDone.type = "submit";
+    // buttonDone.value = "Done";
+    // //buttonD.appendChild(buttonDone);
+    // //currentLine.childNodes.item(3).replaceWith(buttonD);
+    currentLine.childNodes.item(3).firstChild.value="Done";
 
-    buttonDone.onclick = ev => {
-        if (!(quantity.value === "" || calories.value === "")) {
-            quantity.readOnly = true;
-            calories.readOnly = true;
-            buttonDone.value = "Edit";
-            buttonDone.onclick = ev1 => {
-                editLine();
-            };
+    currentLine.childNodes.item(3).firstChild.onclick = ev => {
+        console.log("Am apasat done");
+        if (!(quantity.childNodes.item(0).value === "" || calories.childNodes.item(0).value === "")) {
+            console.log("Au fost setate inputurile");
+            valoareCalorica=currentLine.childNodes.item(2).childNodes.item(0).value.toString();
+            totalCalorii.innerText=(parseInt(totalCalorii.innerText)+parseInt(valoareCalorica)).toString();
+            var textCantitate=quantity.childNodes.item(0).value.toString();
+            quantity.removeChild(quantity.childNodes[0]);
+            quantity.textContent=textCantitate;
+            var textCalorii=calories.childNodes.item(0).value.toString();
+            calories.removeChild(calories.childNodes[0]);
+            calories.textContent=textCalorii;
+            currentLine.childNodes.item(3).firstChild.value = "Edit";
         }
         return false;
     }
