@@ -205,8 +205,10 @@ function dataListCreate(json, ok) {
         // Create a new <option> element.
         var option = document.createElement('option');
         // Set the value using the item in the JSON array.
-
-        option.value = item["nume"];
+        if(ok ===0)
+        option.value = item["denumire"];
+        else
+            option.value = item["nume"];
         ingredientsCalories[item["nume"]] = item["valoare"];
         listaRetete[item["denumire"]] = item["id"];
         umList[item["nume"]] = item["um"];
