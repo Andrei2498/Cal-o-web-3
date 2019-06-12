@@ -160,7 +160,7 @@ function addRecipeButton() {
     httpRequest(json, "POST");
     alert("The Recipe has been added !!");
     console.log(i);
-    return false;
+    return true;
 }
 
 

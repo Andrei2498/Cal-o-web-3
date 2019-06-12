@@ -12,6 +12,7 @@
             <img src="image/banner-2.0.png" alt="Big-Logo">
         </header>
         <?php
+        include "pageCod/phpFile/addProducts.php";
         include "pageCod/phpFile/view.php";
         include 'pageCod/util/config.php';
         $view=new view();
