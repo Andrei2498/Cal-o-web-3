@@ -28,17 +28,24 @@
             }
             $view->start(2);
         ?>
-        <div id="pi" class="profilImage">
-
-        </div>
         <aside>
+            <div id="pi" class="profilImage">
+
+            </div>
             <h2 id="nm">Nume: </h2>
             <h2 id="em">Email: </h2>
             <h3 id="in">Inaltime: </h3>
             <h3 id="gr">Greitate:  </h3>
             <h3 id="imc">Indice de masa corporala:</h3>
+            <h3 style="opacity: 0;">ss</h3>
+            <h3 style="opacity: 0;">ss</h3>
+            <div id="lifo" class="form">
+            </div>
         </aside>
-        <div id="baza"></div>
+
+        <div id="baza">
+
+        </div>
         <footer>
           <ul>
             <li><div id="image">

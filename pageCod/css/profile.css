@@ -4,7 +4,8 @@ body{
     line-height: 1.5;   
     margin: 0;
     padding: 0;
-    background: #2f313d; 
+    background: #2f313d;
+    float: left;
 }
 header{
     background: gray;
@@ -43,12 +44,13 @@ img{
     height: 140px;
 }
 .profilImage {
-    margin: 0;
-    padding: 0;
+    /*margin: ;*/
     height: 250px;
     width: 250px;
-    padding-left: 50px; 
-    padding-top: 50px;
+    /*padding: 50px 0 0 50px;*/
+    padding-right: 50px;
+    /*padding-left: 50px;*/
+
     float: left;
 }
 .profilImage img{
@@ -59,10 +61,14 @@ img{
 }
 aside{
     float: left;
-    margin-left: 100px;
     margin-top: 50px;
-    width: 50%;
-    margin-bottom: 4%;
+    width: 93%;
+    padding-top: 20px;
+    /*padding-right: 20px;*/
+    /*padding-left: 20px;*/
+    padding-bottom: 20px;
+    /*margin-bottom: 4%;*/
+    margin-left: 4%;
 }
 aside h1{
     color: white;
@@ -85,7 +91,10 @@ aside h2{
     position: sticky;
     float: left;
     color: white;
-    margin: 20px 60px 0px;
+    /*margin-top: 20px;*/
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-bottom: 0px;
     left: 32%;
 }
 .reteteUrmate h1{
@@ -117,7 +126,8 @@ aside h2{
     color: white;
     position: relative; 
     float: left;
-    width: 30%;
+    width: 28%;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 10px;
@@ -127,11 +137,12 @@ aside h2{
     color: white;
     position: relative; 
     float: left;
-    width: 30%;
+    width: 28%;
     margin-left: 10px;
     padding: 10px;
     margin-right: 10px;
     background-color: black;
+    margin-bottom: 10px;
 }
 /* ----- AICI AVEM FOOTERUL ------ */
 footer{
@@ -168,4 +179,70 @@ li p{
 }
 .footerfix{
     width: 100%;
+}
+
+.form {
+    color:#aaaaaa;
+    margin: 0;
+    width: 93%;
+    background: rgba(0,0,0,0.2);
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
+}
+
+.gol{
+    width: 100%;
+}
+
+.newClass{
+    width: 100%;
+}
+
+.stageZero{
+    padding: 10px 0px;
+    margin: 0;
+}
+
+.lineColor{
+    position: relative;
+}
+
+#lifo{
+    margin: 0;
+    overflow: hidden;
+}
+
+.d1{
+    background-color: gray;
+}
+
+.d2{
+    background-color: green;
+}
+
+.d3{
+    background-color: yellow;
+}
+
+.d4{
+    background-color: orange;
+}
+
+.d5{
+    background-color: red;
+}
+
+.newNew{
+    margin: 0;
+    width: 100%;
+}
+
+.form table{
+    width: 100%;
+}
+
+.form table tr th{
+    width: 20%;
+    padding-top: 10px;
 }

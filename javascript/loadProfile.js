@@ -13,6 +13,7 @@ function loadImageProfile() {
             buildUrm(JSONObject['nume'], JSONObject['prenume'], JSONObject['email'], JSONObject['inaltime'], JSONObject['greutate'], JSONObject['sex'], JSONObject['id']);
             setTimeout(1000);
             buildMyRecipe(JSONObject['nume'], JSONObject['prenume'], JSONObject['email'], JSONObject['inaltime'], JSONObject['greutate'], JSONObject['sex'], JSONObject['id']);
+            loadInformation();
         }
     });
     request.open('GET', URL + '?value=' + value, true);
@@ -178,4 +179,104 @@ function allMyRecipe(id) {
     });
     request.open('GET', URL + '?value=' + id, false);
     request.send(data);
+}
+
+function loadInformation(){
+    var root = document.getElementById("lifo");
+    if(root !== null){
+        var IMC = parseFloat(root.value);
+        var newElement = document.createElement('h4');
+        newElement.textContent = "Intervalele IMC";
+        newElement.id = "iImc";
+        newElement.style.textAlign = "center";
+        root.append(newElement);
+        var newElement1 = document.createElement('div');
+        newElement1.className = "newClass";
+        newElement1.id = "nEl";
+        root.append(newElement1);
+        newElement = document.createElement('div');
+        newElement.className = "lineColor";
+        newElement.id = "LcL";
+        document.getElementById("nEl").append(newElement);
+        var newRoot = document.getElementById("LcL");
+        var table = document.createElement("table");
+        table.id = "tabl";
+        // TABLE ROW
+        var headLine = document.createElement("tr");
+
+        var thead1 = document.createElement("th");
+        var thead2 = document.createElement("th");
+        var thead3 = document.createElement("th");
+        var thead4 = document.createElement("th");
+        var thead5 = document.createElement("th");
+        thead1.className = "d1";
+        headLine.append(thead1);
+        thead2.className = "d2";
+        headLine.append(thead2);
+        thead3.className = "d3";
+        headLine.append(thead3);
+        thead4.className = "d4";
+        headLine.append(thead4);
+        thead5.className = "d5";
+        headLine.append(thead5);
+        table.append(headLine);
+        var nextRow = document.createElement("tr");
+
+        var tcol1 = document.createElement("td");
+        var tcol2 = document.createElement("td");
+        var tcol3 = document.createElement("td");
+        var tcol4 = document.createElement("td");
+        var tcol5 = document.createElement("td");
+        tcol1.style.textAlign = "left";
+        tcol1.textContent = "x";
+        tcol2.style.textAlign = "left";
+        tcol2.textContent = "18.5";
+        tcol3.style.textAlign = "left";
+        tcol3.textContent = "25";
+        tcol4.style.textAlign = "left";
+        tcol4.textContent = "30";
+        tcol5.style.textAlign = "left";
+        // tcol5.textContent = "40 &nbsp; x";
+        tcol5.innerHTML = "40 " + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                            + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + 'x';
+        nextRow.append(tcol1);
+
+        nextRow.append(tcol2);
+        nextRow.append(tcol3);
+        nextRow.append(tcol4);
+        nextRow.append(tcol5);
+        table.append(nextRow);
+
+
+        var lastRow = document.createElement("tr");
+
+        var last1 = document.createElement("td");
+        var last2 = document.createElement("td");
+        var last3 = document.createElement("td");
+        var last4 = document.createElement("td");
+        var last5 = document.createElement("td");
+        last1.textContent = "Subponderal";
+        last2.textContent = "Normoponderal";
+        last3.textContent = "Supraponderal";
+        last4.textContent = "Obezitate";
+        last5.textContent = "Obezitate morbida";
+
+        lastRow.append(last1);
+        lastRow.append(last2);
+        lastRow.append(last3);
+        lastRow.append(last4);
+        lastRow.append(last5);
+
+        //
+        // 18.5
+        //
+        // 25
+        //
+        // 30
+        //
+        // 40
+
+        table.append(lastRow);
+        newRoot.append(table);
+    }
 }
