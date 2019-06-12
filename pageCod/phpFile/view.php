@@ -103,5 +103,10 @@ class view{
             echo '<a href= "./pageCod/phpFile/logout.php">Logout</a>';
         }
     }
+    function addButton($active){
+        if($active == 0){
+            echo '<button id="myBtn">Open Modal</button>';
+        }
+    }
 }
 ?>

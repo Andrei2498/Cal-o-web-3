@@ -3,6 +3,7 @@
     <head>
         <link rel="shortcut icon" type="image/x-icon" href="../image/logo.png" />
         <link rel="stylesheet" type="text/css" href="../pageCod/css/profile.css">
+
         <title>
             Profile
         </title>
@@ -21,6 +22,7 @@
                 $view->profilePHP(2);
                 $view->calculatorPHP(3);
                 $view->manualPHP(3);
+                $view->addButton(0);
                 $view->logout(0);
             } else {
                 setcookie("accesinterzis",1,time() + 3,"/");
@@ -44,7 +46,6 @@
         </aside>
 
         <div id="baza">
-
         </div>
         <footer>
           <ul>
