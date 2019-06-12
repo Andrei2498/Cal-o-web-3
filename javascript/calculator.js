@@ -138,15 +138,16 @@ function calculateQuantity(calories,numeIngredient)  {
         return 0;
     if(numeIngredient in ingredientsCalories)
     {
-        return (calories*ingredientsCalories[numeIngredient])/100;
+        return (calories/(ingredientsCalories[numeIngredient]/100));
     }
-    else return (calories*getQuantity(numeIngredient))/100;
+    else
+        return (calories/(getQuantity(numeIngredient)/100));
 }
 
 function getQuantity(numeIngredient) {
     for(var i in JSONreteta)
         if(JSONreteta[i]['nume']===numeIngredient)
-            return JSONreteta[i]['cantitate'];
+            return JSONreteta[i]['valoare'];
 }
 function editLine() {
     console.log("Sunt pe edit");
