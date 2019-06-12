@@ -10,6 +10,7 @@ var dataListRecipe;
 var dataListIngredient;
 var numarIngrediente=0;
 var numartTotalCalorii=0;
+var listaNumeProduse=[];
 
 window.onload = function () {
     ingName = document.getElementById("findIngredient");
@@ -65,7 +66,9 @@ function addNewLine() {
     var totalCalorii=document.getElementById("TotalCalorii");
     var ingredientName = document.getElementsByName("Ingredient")[0];
     var ingredientQuantity = document.getElementsByName("Quantity")[0];
-    if (!isNaN(ingredientQuantity.value)&&ingredientQuantity.value.length>0&&ingredientsCalories[ingredientName.value]!==undefined) {
+
+    if (!isNaN(ingredientQuantity.value)&&ingredientQuantity.value.length>0&&ingredientsCalories[ingredientName.value]!==undefined&&!listaNumeProduse.contains(ingredientName.value)) {
+        listaNumeProduse.push(ingredientName.value);
         var row = document.createElement('tr');
         var name = document.createElement('td');
         var quantity = document.createElement('td');
@@ -253,5 +256,9 @@ function realTimeQuantityCaloriesConverter(element) {
         cantitateCurenta.firstChild.value=calculateQuantity(caloriiCurente.firstChild.value,numeProdus.innerText);
     }
 
+}
+
+function importReteta() {
+    console.log("Am apasat import");
 }
 

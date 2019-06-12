@@ -35,6 +35,7 @@ $view->start(2);
         <input name="recipeName" id="ajax" onkeypress="handleKeyPress(event)" onkeyup="searchRecipeResult(this.value);" list="json-datalist-Recipe" placeholder="Name of the Recipe" type="text" onfocus="this.placeholder=''"
                onblur="this.placeholder='Name of the Recipe'"/>
         <datalist id="json-datalist-Recipe"></datalist>
+        <input name="butonImportReteta" id="butonReteta" type="button" onclick="importReteta()" value="Import"/>
     </div>
 
     <div class="tabela">
