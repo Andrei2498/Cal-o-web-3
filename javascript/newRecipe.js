@@ -147,7 +147,7 @@ function addRecipeButton() {
 
     var array = [];
     var recipeName = document.getElementsByName("RecipeName")[0].value;
-    var k = 1;
+    var k = 0;
     array[k++] = {recipeName: recipeName, calorii:calorii};
     tableRef.childNodes.forEach(function (child) {
         if (child.id !== "input" && child.nodeName === "TR") {
@@ -170,7 +170,7 @@ function httpRequest(arg, method) {
             switch (method) {
                 case "POST":
                     if (this.readyState === 4 && this.status === 200) {
-                        // console.log(request.responseText);
+                        console.log(request.responseText);
                     }
                     break;
                 case "GET":
