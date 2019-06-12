@@ -259,6 +259,81 @@ function realTimeQuantityCaloriesConverter(element) {
 }
 
 function importReteta() {
-    console.log("Am apasat import");
+    const URL = document.URL.split("/page")[0] + "/pageCod/phpFile/getRecipeIngredients.php";
+    // value = localStorage.getItem("username");
+    var value=document.getElementById("ajax").value;
+    console.log(value);
+    const data = JSON.stringify({
+        msg: value.toString()
+    });
+
+    const request = new XMLHttpRequest();
+    request.addEventListener('load', function () {
+        if (this.readyState === 4 && this.status === 200) {
+            var JSONObject = JSON.parse(this.responseText);
+            //console.log(JSONObject);
+            createImportLine(JSONObject);
+        }
+    });
+    request.open('GET', URL + '?value=' + value, false);
+    request.send(data);
 }
+
+function createImportLine(jsonFile){
+    console.log(jsonFile);
+    var q = 0;
+    for (var i in jsonFile) {
+        q = q + 1;
+        console.log(jsonFile[i]['nume']);
+    }
+    while(q>0) {
+        var totalIngrediente = document.getElementById("TotalIngrediente");
+        var totalCalorii = document.getElementById("TotalCalorii");
+        var row = document.createElement('tr');
+        var name = document.createElement('td');
+        var quantity = document.createElement('td');
+        var count = document.createElement('td');
+        var buttonE = document.createElement('td');
+        var buttonD = document.createElement('td');
+        var buttonEdit = document.createElement('input');
+        buttonEdit.type = "submit";
+        buttonEdit.value = "Edit";
+        buttonEdit.setAttribute("onclick", 'editLine()');
+        var buttonDelete = document.createElement('input');
+        buttonDelete.type = "submit";
+        buttonDelete.value = "Delete";
+
+        buttonE.append(buttonEdit);
+        buttonD.append(buttonDelete);
+        name.innerText = jsonFile[q]['nume'];
+        quantity.innerText = (100*parseInt(jsonFile[q]['cantitate'])).toString();
+        count.innerText = (parseInt(jsonFile[q]['valoare'])*parseInt(jsonFile[q]['cantitate'])).toString();
+        row.appendChild(name);
+        row.appendChild(quantity);
+        row.appendChild(count);
+        row.appendChild(buttonE);
+        row.appendChild(buttonD);
+        document.getElementById('tabelaIngrediente').appendChild(row);
+
+        buttonDelete.onclick = ev => {
+            deleteLine();
+            totalIngrediente.innerText=numarIngrediente.toString();
+            totalCalorii.innerText=numartTotalCalorii.toString();
+            return false;
+        };
+        buttonEdit.onclick = ev => {
+            editLine();
+            return false;
+        };
+        numarIngrediente++;
+        numartTotalCalorii+=parseInt(count.innerText);
+        totalIngrediente.innerText=numarIngrediente.toString();
+        totalCalorii.innerText=numartTotalCalorii.toString();
+
+        q--;
+    }
+
+}
+
+
 
