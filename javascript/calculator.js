@@ -130,11 +130,13 @@ function editLine() {
     console.log("Sunt pe edit");
     tableRef = document.getElementById("tabelaIngrediente");
     currentLine = document.activeElement.parentNode.parentNode;
+    var ok=0;
     var quantity=currentLine.childNodes.item(1);
     var calories=currentLine.childNodes.item(2);
     var totalCalorii=document.getElementById("TotalCalorii");
     var valoareCalorica=currentLine.childNodes.item(2);
     totalCalorii.innerText=(parseInt(totalCalorii.innerText)-parseInt(valoareCalorica.innerText)).toString();
+    numartTotalCalorii-=parseInt(valoareCalorica.innerText);
     var inputCantitate = document.createElement('input');
     inputCantitate.type = "number";
     var inputCalories = document.createElement('input');
@@ -150,18 +152,16 @@ function editLine() {
     calories.setAttribute("id","Calorii");
     calories.setAttribute("onkeypress","return event.charCode >= 48");
 
-    // var buttonD = document.createElement('td');
-    // var buttonDone = document.createElement('input');
-    // buttonDone.type = "submit";
-    // buttonDone.value = "Done";
-    // //buttonD.appendChild(buttonDone);
-    // //currentLine.childNodes.item(3).replaceWith(buttonD);
+    console.log("Calorii in edit: "+totalCalorii.innerText);
     currentLine.childNodes.item(3).firstChild.value="Done";
 
     currentLine.childNodes.item(3).firstChild.onclick = ev => {
         console.log("Am apasat done");
+        if(ok===1)
+            editLine();
         if (!(quantity.childNodes.item(0).value === "" || calories.childNodes.item(0).value === "")) {
             console.log("Au fost setate inputurile");
+            numartTotalCalorii+=parseInt(calories.childNodes.item(0).value);
             valoareCalorica=currentLine.childNodes.item(2).childNodes.item(0).value.toString();
             totalCalorii.innerText=(parseInt(totalCalorii.innerText)+parseInt(valoareCalorica)).toString();
             var textCantitate=quantity.childNodes.item(0).value.toString();
@@ -171,6 +171,7 @@ function editLine() {
             calories.removeChild(calories.childNodes[0]);
             calories.textContent=textCalorii;
             currentLine.childNodes.item(3).firstChild.value = "Edit";
+            ok=1;
         }
         return false;
     }
@@ -179,10 +180,10 @@ function editLine() {
 
 function deleteLine() {
     tableRef = document.getElementById("tabelaIngrediente");
-    currentLine = document.activeElement.parentNode.parentNode;
+    var linieCurenta = document.activeElement.parentNode.parentNode;
     numarIngrediente--;
-    numartTotalCalorii-=parseInt(currentLine.childNodes.item(2).textContent);
-    tableRef.removeChild(currentLine);
+    numartTotalCalorii-=parseInt(linieCurenta.childNodes.item(2).textContent);
+    tableRef.removeChild(linieCurenta);
 }
 
 
