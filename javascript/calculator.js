@@ -11,6 +11,7 @@ var dataListIngredient;
 var numarIngrediente=0;
 var numartTotalCalorii=0;
 var listaNumeProduse=[];
+var JSONreteta;
 
 window.onload = function () {
     ingName = document.getElementById("findIngredient");
@@ -119,16 +120,34 @@ function addNewLine() {
 function calculateCalories(quantity,numeIngredient){
     if(quantity<0)
         return 0;
-    return (quantity*ingredientsCalories[numeIngredient])/100;
+    //console.log("Eroare in functie "+(quantity*ingredientsCalories[numeIngredient])/100);
+    if(numeIngredient in ingredientsCalories)
+        return (quantity*ingredientsCalories[numeIngredient])/100;
+    else return (quantity*getCalories(numeIngredient))/100;
+}
 
+
+function getCalories(numeIngredient){
+    for(var i in JSONreteta)
+        if(JSONreteta[i]['nume']===numeIngredient)
+            return JSONreteta[i]['valoare'];
 }
 
 function calculateQuantity(calories,numeIngredient)  {
     if(calories<0)
         return 0;
-    return((calories*100)/ingredientsCalories[numeIngredient])
+    if(numeIngredient in ingredientsCalories)
+    {
+        return (calories*ingredientsCalories[numeIngredient])/100;
+    }
+    else return (calories*getQuantity(numeIngredient))/100;
 }
 
+function getQuantity(numeIngredient) {
+    for(var i in JSONreteta)
+        if(JSONreteta[i]['nume']===numeIngredient)
+            return JSONreteta[i]['cantitate'];
+}
 function editLine() {
     console.log("Sunt pe edit");
     tableRef = document.getElementById("tabelaIngrediente");
@@ -252,7 +271,11 @@ function realTimeQuantityCaloriesConverter(element) {
     caloriiCurente.style.borderColor = "";
 
     if(element.getAttribute("id")==="Cantitate"){
+        console.log("Sunt pe cantitate");
         caloriiCurente.firstChild.value= calculateCalories(cantitateCurenta.firstChild.value,numeProdus.innerText);
+        console.log(calculateCalories(cantitateCurenta.firstChild.value,numeProdus.innerText));
+        console.log(cantitateCurenta.firstChild.value);
+        console.log(numeProdus.innerText);
     }
     else if(element.getAttribute("id")==="Calorii"){
         cantitateCurenta.firstChild.value=calculateQuantity(caloriiCurente.firstChild.value,numeProdus.innerText);
@@ -274,6 +297,7 @@ function importReteta() {
         if (this.readyState === 4 && this.status === 200) {
             var JSONObject = JSON.parse(this.responseText);
             //console.log(JSONObject);
+            JSONreteta=JSONObject;
             createImportLine(JSONObject);
         }
     });
