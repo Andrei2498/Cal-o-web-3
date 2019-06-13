@@ -6,10 +6,10 @@
     <script src="../javascript/modal.js"></script>
 </head>
 <body>
-<button id="myBtn">Open Modal</button>
-<div id="myModal" class="modal">
+<!--<button id="myBtn">Open Modal</button>-->
+<!--<div id="myModal" class="modal">-->
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <a class="close" href="Profile.php">&times;</a>
         <h2>Introduceti Retetele Urmate Astazi !</h2>
         <form>
             <table>
@@ -27,10 +27,10 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" onclick="submitRecipes();return false;">
+            <input type="submit" onclick="return submitRecipes();">
         </form>
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
 
 </body>
 </html>

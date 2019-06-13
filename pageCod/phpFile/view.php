@@ -105,7 +105,7 @@ class view{
     }
     function addButton($active){
         if($active == 0){
-            echo '<a id="myBtn" href="./modal.php">Open Modal</a>';
+            echo '<a id="myBtn" href="./AddTodayRecipes.php">Add Today Recipes</a>';
         }
     }
 }
