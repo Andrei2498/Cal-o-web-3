@@ -12,15 +12,11 @@ const requestURL = document.URL.split("/page")[0] + '/pageCod/phpFile/addFollowe
 const requestURL2 = document.URL.split("/page")[0] + '/pageCod/phpFile/searchRecipeRequest.php';
 window.onload = function () {
     i = 0;
-    modal = document.getElementById("myModal");
-    btn = document.getElementById("myBtn");
-    btn.onclick = function () {
-        modal.style.display = "block";
-    };
-    span = document.getElementsByClassName("close")[0];
-    span.onclick = function () {
-        modal.style.display = "none";
-    };
+    // modal = document.getElementById("myModal");
+    // btn = document.getElementById("myBtn");
+    // btn.onclick = function () {
+    //     modal.style.display = "block";
+    // };
     table = document.getElementsByTagName("table")[0];
     input = document.getElementById("inputt");
     myNode = document.getElementById("recipeList");
@@ -147,4 +143,6 @@ function submitRecipes(){
         }
     });
     var json = JSON.stringify(array);
+    httpRequest(json,"POST");
+    return true;
 }
