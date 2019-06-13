@@ -101,7 +101,7 @@ function addNewLine() {
         tableRef.append(line);
         tableRef.append(input);
 
-        calorii = calorii + ingredientsCalories[ingName.value] * ingQu.value / 100;
+        calorii = calorii + ingredientsCalories[ingName.value] * ingQu.value ;
 
         ingName.value = null;
         ingQu.value = null;

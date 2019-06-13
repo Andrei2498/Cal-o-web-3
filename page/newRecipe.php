@@ -36,8 +36,8 @@ $view->start(2);
         <div class="ingredients">
             <table id="ingredientsTable">
                 <tr>
-                    <th>ingredient</th>
-                    <th>Cantitate (gr)</th>
+                    <th>Ingredient</th>
+                    <th>Cantitate (unitate)</th>
                     <th>Action</th>
 
                 </tr>
