@@ -1,10 +1,11 @@
 <?php
 require_once ('../Database.php');
 
-if(isset($_GET['value'])){
+if(isset($_GET['value'])  && isset($_COOKIE['username'])){
     echo getOtherRecipe($_GET['value']);
+} else {
+    header('Location: ../index.php');
 }
-
 function getOtherRecipe($arg){
     $db = new Database();
     $conn = $db-> OpenCon();

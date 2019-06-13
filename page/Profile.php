@@ -15,13 +15,14 @@
             include "../pageCod/phpFile/view.php";
             $view=new view();
             $view->start(0);
-            if(isset($_COOKIE['username'])){
+            if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])){
                 $view->index1PHP(0);
                 $view->addNewPHP(3);
                 $view->profilePHP(2);
                 $view->calculatorPHP(3);
                 $view->manualPHP(3);
                 $view->addButton(0);
+                $view->buttonUP();
                 $view->logout(0);
             } else {
                 setcookie("accesinterzis",1,time() + 3,"/");

@@ -108,5 +108,9 @@ class view{
             echo '<a id="myBtn" href="./AddTodayRecipes.php">Add Today Recipes</a>';
         }
     }
+
+    function buttonUP(){
+        echo '<a id="myBtn" href="./changeProfile.php">Update Profile</a>';
+    }
 }
 ?>

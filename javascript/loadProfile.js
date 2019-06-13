@@ -358,7 +358,7 @@ function listOrange() {
         resultat.style.color = "black";
         resultat.style.backgroundColor = "orange";
         resultat.style.textAlign = "center";
-        resultat.textContent = "Subponderal";
+        resultat.textContent = "Obezitate";
         var text = document.createElement('p');
         text.style.color = "orange";
         text.textContent = "Un indice al masei corporale BMI > 30 crește exponențial riscul de complicații și " +
