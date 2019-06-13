@@ -2,7 +2,7 @@
 <html lang="ro">
 
 <head>
-    <title>Passer</title>
+    <title>Cal-o-Web</title>
     <link href="ScholarCss.css" type="text/css" rel="stylesheet">
     <meta charset="utf-8">
 </head>
@@ -53,15 +53,15 @@
 
     <section id="introducere" role="doc-introduction">
         <h2>2. Descriere</h2>
-        <p>Aplicatia va permite utilizatorului sa se logheze sau inregistreze inainte de a avea acces la
+        <p>Aplicatia va permite utilizatorului sa se autentifice sau inregistreze inainte de a avea acces la
             functionalitatile
             acestei aplicatii web. Dupa autentificare, utilizatorul poate sa creeze retete proprii sau sa modifice
-            retete existente
-            sa isi calculeze numarul de calorii mancate ( la o masa, intr-o zi/saptamana/luna ) pentru a-si inbunatati
+            retete existente si
+            sa isi calculeze numarul de calorii mancate ( la o masa, intr-o zi/saptamana/luna ) pentru a-si imbunatati
             stilul de
             viata. Retetele acestuia si contul vor fi salvate intr-o baza de date MySQL. Aplicatia va oferi o gama de
             peste 1600
-            de produse din care utilizatorul sa isi creeze retele perfecte. Pe pagina de profil a acestuia sunt
+            de produse din care utilizatorul sa isi creeze retete perfecte. Pe pagina de profil a acestuia sunt
             vizibile:
             numele, prenumele, email-ul, inaltimea, greutatea si IMC-ul (Indice de Masa Corporala) plus cateva sfaturi
             utile pentru a-si imbunatati sanatatea si stilul de viata.
@@ -75,15 +75,15 @@
             <p>Utilizatorii se vor putea autentifica sau inregistra. Logarea se face pe baza de username/parola iar
                 inregistrarea implica introducerea de date valide pentru username, parola, nume, prenume, inaltime,
                 varsta, greutate si gen.
-                Toate datele vor fi analizate in timp reala inainte ca userul sa de "Submit" astfel evitam
+                Toate datele vor fi analizate in timp real inainte ca userul sa dea "Submit", astfel evitam
                 reintroducerea
-                inutila adatelor si enervarea clientului.
+                inutila a datelor si enervarea clientului.
             </p>
         </section>
         <section id="data">
             <h3>3.2 Gestionarea retetelor</h3>
-            <p>Odata autentificat, utilizatorul poate crea sau modifice retete care sunt in baza de date,
-                sa isi marchere anumite retete pe care le-a mancat in decursul timpului. Toate aceste informatii sunt
+            <p>Odata autentificat, utilizatorul poate crea sau modifica retete care sunt in baza de date,
+                sa isi marcheze anumite retete pe care le-a mancat in decursul timpului. Toate aceste informatii sunt
                 vizibile pe profilul acestuia alaturi de cateva sfaturi legate de sanatatea acestuia.
             </p>
             <a href="https://www.youtube.com/watch?v=1KYxF8iPHdw">Pe acest link puteti urmari un tutorial pentru
@@ -109,7 +109,7 @@
                 Odata logat acesta va putea accesa pagina de adaugare a unei retete. Aceasta trebuie sa contina un nume
                 valid
                 ( doar litere ) si cel putin un produs. Caloriile retetei vor fi calculate automat si sunt afisate in
-                tarea de jos
+                partea de jos
                 a formularului in care introduceti produsele.
             </p>
             <a href="https://www.youtube.com/watch?v=ALqBMgUBrP4">Pe acest link puteti urmari un tutorial pentru
@@ -152,7 +152,7 @@
                         folosita pentru a afisa valoarea calorica si ingredientele pe pagina de calculator.
                     </li>
                     <li>
-                        Tabela produse ( id, nume, valaore_calorica ) contine toat sortimentul de produse oferit de aplicatia noastra. <br/>
+                        Tabela produse ( id, nume, valaore_calorica ) contine tot sortimentul de produse oferit de aplicatia noastra. <br/>
                         Este utilizata la adaugarea unei noi retete sau la calcularea caloriilor.
                     </li>
                     <li>
@@ -161,10 +161,10 @@
                     </li>
                     <li>
                         Tabela retete ( id, nume, id_creator, val_cal ) retinem informatiile mai generale despre retete. Aceste date le folosim in principal pe
-                        pagina de profil si la incarcarea prodiselor sale in calculator.
+                        pagina de profil si la incarcarea produselor sale in calculator.
                     </li>
                     <li>
-                        Tabela retete_urmate ( id_reteta, id_persoana, data_urm ) retinem id-ul retetelor pe care un utilizator le-a mancat si a dorit sa le pstreze.
+                        Tabela retete_urmate ( id_reteta, id_persoana, data_urm ) retinem id-ul retetelor pe care un utilizator le-a mancat si a dorit sa le pastreze.
                         Aceasta tabela este folosita pe pagina de profil pentru a-l personaliza.
                     </li>
                     <li>
@@ -195,7 +195,7 @@
                     <li>nume</li>
                     <li>valoare_calorica</li>
                 </ul>
-                Entitatea reteta -> este o mancare caruia au fost introduse ingredientele in baza de date si numarul de calorii. <br/>
+                Entitatea reteta -> este o mancare careia i-au fost introduse ingredientele in baza de date si numarul de calorii. <br/>
                 Este formata din:
                 <ul>
                     <li>id</li>
@@ -217,11 +217,11 @@
     <section id="progres">
         <h2>6. Progresul proiectului</h2>
         <p>
-            Pirlog Marcel Ionut -> sa ocupat de login ( back-end ), resiter ( back-end ), manual ( front-end + back-end
+            Pirlog Marcel Ionut -> s-a ocupat de login ( back-end ), register ( back-end ), manual ( front-end + back-end
             ), profil ( front-end + back-end ), restructurarea ierarhiei de fisiere. <br/>
-            Cusniriuc Beniamin -> sa ocupat de pagina care adauga o noua reteta ( front-end + back-end ), registe (
+            Cusniriuc Beniamin -> s-a ocupat de pagina care adauga o noua reteta ( front-end + back-end ), register (
             front-end) si design <br/>
-            Miron Andrei Daniel -> sa ocumat de padina care calculeaza o caloriile ( front-end + back-end ), login (
+            Miron Andrei Daniel -> s-a ocupat de pagina care calculeaza caloriile ( front-end + back-end ), login (
             front-end ) si design <br/>
         </p>
     </section>
@@ -229,8 +229,8 @@
         <h2>7. Sistem management cod sursa</h2>
         <p>
             Sistemul de management al codului sursa este github. A fost folosita aplicatia de desktop, toti
-            cei trei membri ai echipei fiind colaboratori si avand drepturi redicate asupra proiectului,
-            push-ulrile fiind facute dupa consularea cu ceilalti doi membi ai echipei.
+            cei trei membri ai echipei fiind colaboratori si avand drepturi ridicate asupra proiectului,
+            push-urile fiind facute dupa consultarea cu ceilalti doi membri ai echipei.
         </p>
     </section>
     <section id="bibliografie">
